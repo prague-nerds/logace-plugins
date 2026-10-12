@@ -2,6 +2,27 @@
   "version": 1,
   "plugins": [
     {
+      "id": "cloudwatch.source",
+      "version": "1.0.0",
+      "displayName": "AWS CloudWatch Logs",
+      "description": "CloudWatch log group snapshots and live streams through AWS CLI v2.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "a226d3d37133ff82fc32dc8d4062c07a95c8bcddd017bd59e7e5dc8857440a12",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "RunsProcesses",
+        "UsesNetwork",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
+    },
+    {
       "id": "docker.source",
       "version": "1.0.0",
       "displayName": "Docker container",

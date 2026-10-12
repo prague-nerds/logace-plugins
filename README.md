@@ -26,3 +26,7 @@ dotnet run --project LogAce -- --plugin-dir .local/plugins
 The development command refreshes declared source hashes and the native UI host binding, then builds into an isolated local registry. Repeat it and restart LogAce after edits. Dependency pins and API/identity metadata remain explicit. Before submitting a PR, update `index.json` with the final raw lock's SHA-256 and matching metadata. Keep compiled artifacts and local state out of the repository.
 
 Require pull requests and maintainer approval on `main` using GitHub rulesets/branch protection.
+
+## AWS CloudWatch source
+
+[`cloudwatch.source`](plugins/cloudwatch.source/README.md) provides AWS CLI v2 log group discovery, snapshots and live follow through the public source API. Its standalone tests use fake CLI fixtures; credentials stay with the AWS CLI.
