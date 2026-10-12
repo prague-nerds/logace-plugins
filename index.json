@@ -102,6 +102,27 @@
           "declarativeForm"
         ]
       }
+    },
+    {
+      "id": "azure.source",
+      "version": "1.0.0",
+      "displayName": "Azure logs",
+      "description": "Azure App Service streams and Log Analytics queries through Azure CLI.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "0aec5b9d1e212bb991c29b58b959bbfab96cc5f9ad6dd9d611093ab9c95aa14f",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "RunsProcesses",
+        "UsesNetwork",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
     }
   ]
 }
