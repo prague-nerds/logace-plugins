@@ -1,0 +1,77 @@
+{
+  "lockVersion": 1,
+  "id": "oslog.source",
+  "version": "1.0.0",
+  "kind": "source",
+  "entryPoint": "LogAce.Plugins.OsLog.OsLogSourcePlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "sources": [
+    {
+      "path": "Browse.cs",
+      "sha256": "93e2f67e7d132efffac82e3d48fe1e0da3b835c327b33388a5bff065f0fdeb6e"
+    },
+    {
+      "path": "BrowseOption.cs",
+      "sha256": "5b30ce7b1e242ca6fb19271eac37c7479940f90222cbc9810a710031ead36f54"
+    },
+    {
+      "path": "Configuration.cs",
+      "sha256": "a0c9112784b888155cc6c2c72f2704cbd0cbff62ed3af839eabbf81692aa0cbf"
+    },
+    {
+      "path": "OsLogDisplayPathFormatting.cs",
+      "sha256": "0e0f6f67c949c75955fa0a1d35c5a449c31fdb28a99244c08c76d37c704ff7d4"
+    },
+    {
+      "path": "OsLogFacet.cs",
+      "sha256": "208fb3d031bafbb540ae913ecea0590f99cd01078a56ba83296b747632dc2c2a"
+    },
+    {
+      "path": "OsLogFacetCatalog.cs",
+      "sha256": "5157a0743f524396cf01356915fc82530c56aa94bc6dbadc35183d7d8cc04872"
+    },
+    {
+      "path": "OsLogFacetKind.cs",
+      "sha256": "3d904b6211a8aef883b23b6cb3e485ef3863a8cd24477a17fb5bf2f1f2ecfffe"
+    },
+    {
+      "path": "OsLogFollowSession.cs",
+      "sha256": "5dc28b328091ace3153806b809526f7a8b2b31556f7d7f6f29481d382a0072ef"
+    },
+    {
+      "path": "OsLogLevel.cs",
+      "sha256": "290da7012dd756bf6964a2fadb11646445f6c9c24fd093252ffe7a840eb4c283"
+    },
+    {
+      "path": "OsLogOpenMode.cs",
+      "sha256": "b2ec4a099ae12e5e0f48978a6419f7062b015574eafec05658aee27a83e628ef"
+    },
+    {
+      "path": "OsLogSourceFactory.cs",
+      "sha256": "96a4bb6f5614a3d6129c6967a7653e506709ac5c4af56fc7161f41372ed176b1"
+    },
+    {
+      "path": "OsLogSourceOptions.cs",
+      "sha256": "2407fe658bd8b51b1777470cf852946f48e9314acdf027fe4c0f1241e111a7d1"
+    },
+    {
+      "path": "SourceRuntime.cs",
+      "sha256": "01c89a3a16b4f7aa0f9a536189632f17000a8433c27728346bf33f56d433baf6"
+    },
+    {
+      "path": "TemporaryFileLifetime.cs",
+      "sha256": "dd6b7493edf2c7706dd91d5d27bd6e3423bdd98c3ed865b3bc85e87fa8955151"
+    },
+    {
+      "path": "plugin.cs",
+      "sha256": "8b0a03a916fc6f0bc7b0f1b7c1e3727a5dd7fbdaebaa7eb368f409ae6a5f87bd"
+    }
+  ],
+  "packages": [],
+  "ui": {
+    "modes": [
+      "declarativeForm"
+    ]
+  }
+}
