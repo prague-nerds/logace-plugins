@@ -2,6 +2,27 @@
   "version": 1,
   "plugins": [
     {
+      "id": "docker.source",
+      "version": "1.0.0",
+      "displayName": "Docker container",
+      "description": "Docker container log snapshots and live streams through the Docker CLI.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "077f298c31f5a76b2d993b3610a9d6f6796ac9d4e5947110d7c63648c8560ffd",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "RunsProcesses",
+        "UsesNetwork",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
+    },
+    {
       "id": "example.snapshot-source",
       "version": "1.0.0",
       "displayName": "Text snapshot",
