@@ -23,6 +23,27 @@
       }
     },
     {
+      "id": "kubectl.source",
+      "version": "1.0.0",
+      "displayName": "Kubernetes pod",
+      "description": "Kubernetes pod log snapshots and live streams through kubectl.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "03c7d452825bb05cdb841fa732e8a34f8c858a94314b8e0cd68dcba8d5abb2f3",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "RunsProcesses",
+        "UsesNetwork",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
+    },
+    {
       "id": "example.snapshot-source",
       "version": "1.0.0",
       "displayName": "Text snapshot",
