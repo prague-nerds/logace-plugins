@@ -12,6 +12,7 @@ Plugins are reviewable C# source with a pinned lock file. LogAce fetches one com
 | --- | --- |
 | [Docker container](plugins/docker.source/README.md) | Browse containers, open snapshots and follow logs through the Docker CLI. |
 | [Kubernetes pod](plugins/kubectl.source/README.md) | Browse pods and containers, open snapshots and follow logs through kubectl. |
+| [GCP Cloud Logging](plugins/gcloud.source/README.md) | Cloud Logging snapshots and live streams through gcloud. |
 | Text snapshot | Minimal declarative form example for plugin authors. |
 
 ## Local development

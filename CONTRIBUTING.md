@@ -11,3 +11,9 @@ Submit a pull request to **prague-nerds/logace-plugins**, LogAce's sole public p
 7. Updates bump the version and recalculate source/lock hashes. Summarize source, capability and dependency changes in the PR. Preserve stable IDs and migrate saved source configuration where needed.
 
 Maintainers check source/dependencies, test integration and approve before merge to `main`. Hashes provide integrity and repeatable review; they do not establish trust or limit plugin privileges.
+
+## C# layout and readability
+
+Use four spaces and the repository's `.editorconfig`. Put braces around control-flow bodies and expand statement blocks onto separate lines. Separate methods, constructors and documented members with one blank line, placing that line before their XML documentation. Inside methods, separate guards, loops and other logical sections with a blank line.
+
+Keep one top-level class, interface, record or enum per file, named after the type. The package entry point may stay in the required `plugin.cs` metadata file. Small private nested types can remain with their owner when they describe an implementation detail of that type. The compiler does not require combined provider files: it compiles all source files explicitly listed in `plugin.lock.json` together. When splitting or adding files, update that list and every source hash, then update the catalog's raw lock hash.
