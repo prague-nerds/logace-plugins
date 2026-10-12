@@ -2,6 +2,27 @@
   "version": 1,
   "plugins": [
     {
+      "id": "azure.source",
+      "version": "1.0.0",
+      "displayName": "Azure logs",
+      "description": "Azure App Service streams and Log Analytics queries through Azure CLI.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "0aec5b9d1e212bb991c29b58b959bbfab96cc5f9ad6dd9d611093ab9c95aa14f",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "RunsProcesses",
+        "UsesNetwork",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
+    },
+    {
       "id": "cloudwatch.source",
       "version": "1.0.0",
       "displayName": "AWS CloudWatch Logs",
@@ -44,6 +65,65 @@
       }
     },
     {
+      "id": "example.snapshot-source",
+      "version": "1.0.0",
+      "displayName": "Text snapshot",
+      "description": "Open entered text as a temporary log snapshot.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "5c32d0320ef368e09f81c549f3299f88ede10c46a6fac677e338d31a4677993d",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "ReadsLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
+    },
+    {
+      "id": "gcloud.source",
+      "version": "1.0.0",
+      "displayName": "GCP Cloud Logging",
+      "description": "Cloud Logging snapshots and live streams through gcloud.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "04784e3c2ca06df582dfc98960b0a7a5fadc1f20efeb2d0e74bc1553ac2270bf",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "RunsProcesses",
+        "UsesNetwork",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
+    },
+    {
+      "id": "journalctl.source",
+      "version": "1.0.0",
+      "displayName": "Journalctl service",
+      "description": "Local systemd journal snapshots and live streams through journalctl.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "7533cb49c82babf69e896cf0951c89e9eafce7a3f24b8e86bfdb7e6b780b5ff1",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "RunsProcesses",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
+    },
+    {
       "id": "kubectl.source",
       "version": "1.0.0",
       "displayName": "Kubernetes pod",
@@ -65,16 +145,99 @@
       }
     },
     {
-      "id": "example.snapshot-source",
+      "id": "logcat.source",
       "version": "1.0.0",
-      "displayName": "Text snapshot",
-      "description": "Open entered text as a temporary log snapshot.",
+      "displayName": "Android device (logcat)",
+      "description": "Android logcat snapshots and live streams through adb.",
       "kind": "source",
       "apiVersion": 1,
-      "lockSha256": "5c32d0320ef368e09f81c549f3299f88ede10c46a6fac677e338d31a4677993d",
+      "lockSha256": "07196c2c5c4d4d0c732345666bf1b34e03b92c95ee92305546ef17c1041d325c",
       "capabilities": [
         "ProvideSourceConfigurationUi",
-        "ReadsLocalFiles"
+        "RunsProcesses",
+        "UsesNetwork",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
+    },
+    {
+      "id": "oslog.source",
+      "version": "1.0.0",
+      "displayName": "macOS unified log",
+      "description": "Host macOS unified log snapshots and live streams through the log command.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "24535e1cbcdfa2574de57e63fd7f191235a79b72f315bf6ab8022c7ce15288da",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "RunsProcesses",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
+    },
+    {
+      "id": "otel.source",
+      "version": "1.0.0",
+      "displayName": "OpenTelemetry logs",
+      "description": "Receive OpenTelemetry logs over OTLP/HTTP as JSON or protobuf.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "834a0cddb3d2f462c0119287b94500fc9f7fcd302c963f2b8b13c9f05b5a522e",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "UsesNetwork",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
+    },
+    {
+      "id": "simctl.source",
+      "version": "1.0.0",
+      "displayName": "iOS simulator",
+      "description": "Unified log snapshots from booted iOS simulators through xcrun simctl.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "6fb69b15ae83f0ca38ed184a6fefe07f1225ea32839ff8335d13528f73872852",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "RunsProcesses",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
+    },
+    {
+      "id": "syslog.source",
+      "version": "1.0.0",
+      "displayName": "Syslog sink",
+      "description": "Receive syslog messages over UDP and TCP with newline or octet-counted framing.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "accb724f64c36180db031e6453233807a1d9cd6024e04f619392b699531ffe54",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "UsesNetwork",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
       ],
       "ui": {
         "modes": [

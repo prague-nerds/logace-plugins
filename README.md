@@ -12,6 +12,14 @@ Plugins are reviewable C# source with a pinned lock file. LogAce fetches one com
 | --- | --- |
 | [Docker container](plugins/docker.source/README.md) | Browse containers, open snapshots and follow logs through the Docker CLI. |
 | [Kubernetes pod](plugins/kubectl.source/README.md) | Browse pods and containers, open snapshots and follow logs through kubectl. |
+| [GCP Cloud Logging](plugins/gcloud.source/README.md) | Cloud Logging snapshots and live streams through gcloud. |
+| [Azure logs](plugins/azure.source/README.md) | Azure App Service streams and Log Analytics queries through Azure CLI. |
+| [Journalctl service](plugins/journalctl.source/README.md) | Local systemd journal snapshots and live streams through journalctl. |
+| [iOS simulator](plugins/simctl.source/README.md) | Unified log snapshots from booted iOS simulators through xcrun simctl. |
+| [Android device (logcat)](plugins/logcat.source/README.md) | Android logcat snapshots and live streams through adb. |
+| [macOS unified log](plugins/oslog.source/README.md) | Host macOS unified log snapshots and live streams through the log command. |
+| [OpenTelemetry logs](plugins/otel.source/README.md) | Receive OpenTelemetry logs over OTLP/HTTP as JSON or protobuf. |
+| [Syslog sink](plugins/syslog.source/README.md) | Receive syslog messages over UDP and TCP with newline or octet-counted framing. |
 | Text snapshot | Minimal declarative form example for plugin authors. |
 
 ## Local development

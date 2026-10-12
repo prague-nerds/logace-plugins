@@ -1,0 +1,85 @@
+{
+  "lockVersion": 1,
+  "id": "logcat.source",
+  "version": "1.0.0",
+  "kind": "source",
+  "entryPoint": "LogAce.Plugins.Logcat.LogcatSourcePlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "sources": [
+    {
+      "path": "AdbDeviceCatalog.cs",
+      "sha256": "5c185d3b6c9a6bd07c66c1de5005725280504edd2b41524d66f3b8c66fe2cf98"
+    },
+    {
+      "path": "AdbDeviceListEntry.cs",
+      "sha256": "d7156fe80b298ef24d9cbee61cd079fade4fc7696d05c9c5d3f7c8bde0f355cc"
+    },
+    {
+      "path": "AdbPackageCatalog.cs",
+      "sha256": "739d7f5d55b6193bddc2da653f724e8bde69f64fa3abb0408c4eba11497effaf"
+    },
+    {
+      "path": "Browse.cs",
+      "sha256": "309df61440011eccbd73646de394ee842e73ca7cf3e1647f47ac03531aa05dcb"
+    },
+    {
+      "path": "BrowseOption.cs",
+      "sha256": "8a91c661cb4b59a3ce36b4452deb66342261003bf208deecbfebca22d223070e"
+    },
+    {
+      "path": "Configuration.cs",
+      "sha256": "46be34c51df24acc0050d2468c67dc118ac194c5dcf06319bc00804af84d31ea"
+    },
+    {
+      "path": "LogcatBuffer.cs",
+      "sha256": "2bc10eafd0d89d3c02eeaed7970939ec886937aad0ad1002a2c16bc57f6c4f52"
+    },
+    {
+      "path": "LogcatDisplayPathFormatting.cs",
+      "sha256": "852aa20aef821b91ccd6c54e94366dbe3152cc35c7e133fdb1abb6064870805d"
+    },
+    {
+      "path": "LogcatFollowSession.cs",
+      "sha256": "44e322ce3a42957882356025834cc8fa40a7a7a1785f10649a0f2176ef5fcbf2"
+    },
+    {
+      "path": "LogcatLevel.cs",
+      "sha256": "6f21006f53b08393c4404841e4908b6f12679a965c6c1f11ee507e410d57c111"
+    },
+    {
+      "path": "LogcatOpenMode.cs",
+      "sha256": "33215ca3ca69f95d79d116f652872cf24ab79d2b8e044c54f460ac965deace06"
+    },
+    {
+      "path": "LogcatOptionTokens.cs",
+      "sha256": "dd20624e01b601acf37cd4847b66be15f1ce40546e894d7418f0250ded5593fb"
+    },
+    {
+      "path": "LogcatSourceFactory.cs",
+      "sha256": "d29d6fa7244208144ed920dbaed3ba683422a6e96ae35d95e2aedc596084fdca"
+    },
+    {
+      "path": "LogcatSourceOptions.cs",
+      "sha256": "c000cc0fee0d3a43d60685d4ad2ba6f284633571af19813703bdfea167b0bc78"
+    },
+    {
+      "path": "SourceRuntime.cs",
+      "sha256": "cfb0a0ee80b424fb8b3309489fc4c4eb3a650bafe05a66b004199cd556c8c167"
+    },
+    {
+      "path": "TemporaryFileLifetime.cs",
+      "sha256": "df46266c781dc71021849fe6437642288b43f3594756ce158d51fba4b7ad317b"
+    },
+    {
+      "path": "plugin.cs",
+      "sha256": "119a752ac7c8986cfa7851d9e1d1df5b0e73390f9efeecc7b7a64dd59baa5f58"
+    }
+  ],
+  "packages": [],
+  "ui": {
+    "modes": [
+      "declarativeForm"
+    ]
+  }
+}
