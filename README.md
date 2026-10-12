@@ -15,6 +15,7 @@ Plugins are reviewable C# source with a pinned lock file. LogAce fetches one com
 | [GCP Cloud Logging](plugins/gcloud.source/README.md) | Cloud Logging snapshots and live streams through gcloud. |
 | [Azure logs](plugins/azure.source/README.md) | Azure App Service streams and Log Analytics queries through Azure CLI. |
 | [Journalctl service](plugins/journalctl.source/README.md) | Local systemd journal snapshots and live streams through journalctl. |
+| [iOS simulator](plugins/simctl.source/README.md) | Unified log snapshots from booted iOS simulators through xcrun simctl. |
 | Text snapshot | Minimal declarative form example for plugin authors. |
 
 ## Local development

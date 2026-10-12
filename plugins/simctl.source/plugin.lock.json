@@ -1,0 +1,73 @@
+{
+  "lockVersion": 1,
+  "id": "simctl.source",
+  "version": "1.0.0",
+  "kind": "source",
+  "entryPoint": "LogAce.Plugins.Simctl.SimctlSourcePlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "sources": [
+    {
+      "path": "Browse.cs",
+      "sha256": "5993368d0fe8ff19c904cb02c39fb2d72608882a76bd430aa5f24627a590b0b1"
+    },
+    {
+      "path": "BrowseOption.cs",
+      "sha256": "bfe822e5a248bebb4c0e1247104698022c7b2b6db20b50e06e60caa00b24e84a"
+    },
+    {
+      "path": "Configuration.cs",
+      "sha256": "61895259cbd7a706cee06bb8a84229a72b64f25aa36a9abc36b57ef62d7e663e"
+    },
+    {
+      "path": "SimctlAppCatalog.cs",
+      "sha256": "ca0887755171eb5afe80482b5b754b824ec2a4607c93c70732c34c61722d704a"
+    },
+    {
+      "path": "SimctlAppListEntry.cs",
+      "sha256": "23d7ac5999adae23a450930295d4c23314825d795aa908971548809c539df79e"
+    },
+    {
+      "path": "SimctlDeviceCatalog.cs",
+      "sha256": "7d9da09e7eeb8552f20021cf1936439b450a9a9fc2acacd273dba6f0c83db7a6"
+    },
+    {
+      "path": "SimctlDeviceListEntry.cs",
+      "sha256": "7e271bc297166b372f766db2883ab032405626f3e5f50d4cdee220756637198a"
+    },
+    {
+      "path": "SimctlLogSourceFactory.cs",
+      "sha256": "60b32597ff61313371a6e58b258bec842aaa96704a905f1eb78c018ee5252bcb"
+    },
+    {
+      "path": "SimctlLogSourceOptions.cs",
+      "sha256": "824a60f01d780f18a578a67b9eec5fa7274bad287f895622e285b3dfe1786506"
+    },
+    {
+      "path": "SimctlProcessCatalog.cs",
+      "sha256": "ca8cc52ead32f23bff5a12ad102449586581af38a376511dc3dc77a8a2b0c453"
+    },
+    {
+      "path": "SimctlProcessListEntry.cs",
+      "sha256": "be6e9f8728f02ea8fa72d28b11f76978b5f2a89221e9609f0fa8a702cf211dc0"
+    },
+    {
+      "path": "SourceRuntime.cs",
+      "sha256": "8ac1e8831085c7becd8ce2a735ca09598ced14371a990b729cd0d5d0696ec0e4"
+    },
+    {
+      "path": "TemporaryFileLifetime.cs",
+      "sha256": "3e3ac1e787323fc2d1748463285e15cc2351ab4d4f85f2a0db3a6f444372589e"
+    },
+    {
+      "path": "plugin.cs",
+      "sha256": "463ab20964cdbce5617822349d6c3d2c92192215afb9925a8a01d6c9761ecd87"
+    }
+  ],
+  "packages": [],
+  "ui": {
+    "modes": [
+      "declarativeForm"
+    ]
+  }
+}
