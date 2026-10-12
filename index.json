@@ -163,6 +163,27 @@
           "declarativeForm"
         ]
       }
+    },
+    {
+      "id": "logcat.source",
+      "version": "1.0.0",
+      "displayName": "Android device (logcat)",
+      "description": "Android logcat snapshots and live streams through adb.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "07196c2c5c4d4d0c732345666bf1b34e03b92c95ee92305546ef17c1041d325c",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "RunsProcesses",
+        "UsesNetwork",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
     }
   ]
 }
