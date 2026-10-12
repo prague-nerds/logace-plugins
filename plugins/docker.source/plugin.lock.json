@@ -1,0 +1,33 @@
+{
+  "lockVersion": 1,
+  "id": "docker.source",
+  "version": "1.0.0",
+  "kind": "source",
+  "entryPoint": "LogAce.Plugins.Docker.DockerSourcePlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "sources": [
+    {
+      "path": "plugin.cs",
+      "sha256": "48cb775fd039f391fe55b50e232a83bc8bdcdafa3eb2c470b03be74015f8ea4f"
+    },
+    {
+      "path": "DockerConfiguration.cs",
+      "sha256": "fbcde9e6f0d6b12df85f9c68a50d61ae1523f7686d5d31197c40418451312efe"
+    },
+    {
+      "path": "DockerCli.cs",
+      "sha256": "c021ac3f1cb608d6a55e4412e796347ab7cbe9a9ec669b897e478d967dbf7433"
+    },
+    {
+      "path": "DockerLogSource.cs",
+      "sha256": "f9447480bfc510a047e34608f5bef054b48965d5d4b4b08b9c06dc7a4cd0dca9"
+    }
+  ],
+  "packages": [],
+  "ui": {
+    "modes": [
+      "declarativeForm"
+    ]
+  }
+}

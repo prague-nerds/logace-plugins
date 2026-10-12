@@ -4,7 +4,14 @@ The official source catalog for LogAce is the public repository **prague-nerds/l
 
 Plugins are reviewable C# source with a pinned lock file. LogAce fetches one commit, verifies hashes, presents source and dependencies for approval, then compiles locally. Third-party code runs with your user privileges. This is not a sandbox.
 
-`index.json` is schema version 1. Packages live in `plugins/<id>/`; the initial `example.snapshot-source` opens entered text as a temporary log. Each package has `plugin.cs`, `plugin.lock.json` and optional explicitly locked helper files. Index entries contain no external URLs or links to other source repositories.
+`index.json` is schema version 1. Packages live in `plugins/<id>/`; `docker.source` provides optional Docker snapshots and live streams; `example.snapshot-source` opens entered text as a temporary log for learning the API. Each package has `plugin.cs`, `plugin.lock.json` and optional explicitly locked helper files. Index entries contain no external URLs or links to other source repositories.
+
+## Available plugins
+
+| Plugin | Purpose |
+| --- | --- |
+| [Docker container](plugins/docker.source/README.md) | Browse containers, open snapshots and follow logs through the Docker CLI. |
+| Text snapshot | Minimal declarative form example for plugin authors. |
 
 ## Local development
 
