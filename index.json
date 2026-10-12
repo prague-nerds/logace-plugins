@@ -204,6 +204,26 @@
           "declarativeForm"
         ]
       }
+    },
+    {
+      "id": "otel.source",
+      "version": "1.0.0",
+      "displayName": "OpenTelemetry logs",
+      "description": "Receive OpenTelemetry logs over OTLP/HTTP as JSON or protobuf.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "834a0cddb3d2f462c0119287b94500fc9f7fcd302c963f2b8b13c9f05b5a522e",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "UsesNetwork",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
     }
   ]
 }
