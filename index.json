@@ -224,6 +224,26 @@
           "declarativeForm"
         ]
       }
+    },
+    {
+      "id": "syslog.source",
+      "version": "1.0.0",
+      "displayName": "Syslog sink",
+      "description": "Receive syslog messages over UDP and TCP with newline or octet-counted framing.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "accb724f64c36180db031e6453233807a1d9cd6024e04f619392b699531ffe54",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "UsesNetwork",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
     }
   ]
 }

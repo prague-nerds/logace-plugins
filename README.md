@@ -19,6 +19,7 @@ Plugins are reviewable C# source with a pinned lock file. LogAce fetches one com
 | [Android device (logcat)](plugins/logcat.source/README.md) | Android logcat snapshots and live streams through adb. |
 | [macOS unified log](plugins/oslog.source/README.md) | Host macOS unified log snapshots and live streams through the log command. |
 | [OpenTelemetry logs](plugins/otel.source/README.md) | Receive OpenTelemetry logs over OTLP/HTTP as JSON or protobuf. |
+| [Syslog sink](plugins/syslog.source/README.md) | Receive syslog messages over UDP and TCP with newline or octet-counted framing. |
 | Text snapshot | Minimal declarative form example for plugin authors. |
 
 ## Local development
