@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "plugins": [
+    {
+      "id": "example.snapshot-source",
+      "version": "1.0.0",
+      "displayName": "Text snapshot",
+      "description": "Open entered text as a temporary log snapshot.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "5c32d0320ef368e09f81c549f3299f88ede10c46a6fac677e338d31a4677993d",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "ReadsLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
+    }
+  ]
+}
