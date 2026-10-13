@@ -81,6 +81,27 @@
           "declarativeForm"
         ]
       }
+    },
+    {
+      "id": "gcloud.source",
+      "version": "1.0.0",
+      "displayName": "GCP Cloud Logging",
+      "description": "Cloud Logging snapshots and live streams through gcloud.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "04784e3c2ca06df582dfc98960b0a7a5fadc1f20efeb2d0e74bc1553ac2270bf",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "RunsProcesses",
+        "UsesNetwork",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
     }
   ]
 }
