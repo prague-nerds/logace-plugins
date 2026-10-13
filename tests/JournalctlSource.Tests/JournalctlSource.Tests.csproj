@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <!-- Standalone catalog checkout: -p:LogAceRoot=/path/to/logace -->
+    <LogAceRoot Condition="'$(LogAceRoot)' == ''">../../../..</LogAceRoot>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(LogAceRoot)/LogAce.PluginApi/LogAce.PluginApi.csproj" />
+    <Compile Include="../../plugins/journalctl.source/*.cs" Link="Plugin/%(Filename)%(Extension)" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

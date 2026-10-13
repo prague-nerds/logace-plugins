@@ -1,0 +1,61 @@
+{
+  "lockVersion": 1,
+  "id": "journalctl.source",
+  "version": "1.0.0",
+  "kind": "source",
+  "entryPoint": "LogAce.Plugins.Journalctl.JournalctlSourcePlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "sources": [
+    {
+      "path": "Browse.cs",
+      "sha256": "19aac63017e171eb9b7e20b207080e768e2f06843ddfae956bc10c292a446c2a"
+    },
+    {
+      "path": "BrowseOption.cs",
+      "sha256": "202e0cd0b864615c05c3f588a3c0985fa62fbcd3046e6986b35b35a626a3038b"
+    },
+    {
+      "path": "Configuration.cs",
+      "sha256": "dca816574c2c74a48a3cd2e0b54404f665d0332e36d1fa46ccf46e9ddfa41896"
+    },
+    {
+      "path": "JournalctlServiceCatalog.cs",
+      "sha256": "cae52622e7f6316ae5d3218f4169a82f193a1e57def9737158eccac368120de1"
+    },
+    {
+      "path": "JournalctlServiceListEntry.cs",
+      "sha256": "d8ff8d8bb1ff409d4ce57e90f9147c446fab29d11c39be86edb4480992e9eb87"
+    },
+    {
+      "path": "JournalctlSinceArgumentBuilder.cs",
+      "sha256": "fd551ec58f98b9b763c3322dd3464294acfbcd077d543d89210a7265432ce9fa"
+    },
+    {
+      "path": "JournalctlSourceFactory.cs",
+      "sha256": "84f5658a9e9d7a082b425ad4b9de91cccc2fc97da0b0221f24e5b481cb69a104"
+    },
+    {
+      "path": "JournalctlSourceOptions.cs",
+      "sha256": "96202d8db217a6e8cb4a2098660f7efea22ac3bde79decd97c0bfdd9390adf04"
+    },
+    {
+      "path": "SourceRuntime.cs",
+      "sha256": "919cc378b9087996d42d950c8a66b1aa37e45be83de0a70fe30a73d0561d035e"
+    },
+    {
+      "path": "TemporaryFileLifetime.cs",
+      "sha256": "f7d33134ba7a44917972de07a88c2621d1609becdace54cf7d1f5b8834d8e2b5"
+    },
+    {
+      "path": "plugin.cs",
+      "sha256": "0fdbe44abd54a053f4dd79c099a9eb35ce9cfe35cf253749ec09dd83b7b05874"
+    }
+  ],
+  "packages": [],
+  "ui": {
+    "modes": [
+      "declarativeForm"
+    ]
+  }
+}

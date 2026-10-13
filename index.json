@@ -123,6 +123,26 @@
           "declarativeForm"
         ]
       }
+    },
+    {
+      "id": "journalctl.source",
+      "version": "1.0.0",
+      "displayName": "Journalctl service",
+      "description": "Local systemd journal snapshots and live streams through journalctl.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "7533cb49c82babf69e896cf0951c89e9eafce7a3f24b8e86bfdb7e6b780b5ff1",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "RunsProcesses",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
     }
   ]
 }
