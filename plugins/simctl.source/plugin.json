@@ -1,0 +1,39 @@
+{
+  "manifestVersion": 1,
+  "id": "simctl.source",
+  "version": "1.0.1",
+  "displayName": "iOS simulator",
+  "description": "Unified log snapshots from booted iOS simulators through xcrun simctl.",
+  "kind": "source",
+  "entryPoint": "LogAce.Plugins.Simctl.SimctlSourcePlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "sources": [
+    "Browse.cs",
+    "BrowseOption.cs",
+    "Configuration.cs",
+    "SimctlAppCatalog.cs",
+    "SimctlAppListEntry.cs",
+    "SimctlDeviceCatalog.cs",
+    "SimctlDeviceListEntry.cs",
+    "SimctlLogSourceFactory.cs",
+    "SimctlLogSourceOptions.cs",
+    "SimctlProcessCatalog.cs",
+    "SimctlProcessListEntry.cs",
+    "SourceRuntime.cs",
+    "TemporaryFileLifetime.cs",
+    "plugin.cs"
+  ],
+  "capabilities": [
+    "ProvideSourceConfigurationUi",
+    "RunsProcesses",
+    "ReadsLocalFiles",
+    "WritesLocalFiles"
+  ],
+  "packages": [],
+  "ui": {
+    "modes": [
+      "declarativeForm"
+    ]
+  }
+}

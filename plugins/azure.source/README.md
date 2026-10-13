@@ -34,4 +34,4 @@ dotnet test submodules/logace-plugins/tests/AzureSource.Tests/AzureSource.Tests.
 
 For a standalone catalog checkout, pass `-p:LogAceRoot=/absolute/path/to/logace` to `dotnet test`. Only `LogAce.PluginApi` is referenced; the application and Terminal.Gui are not test dependencies. CLI fixtures never contact accounts or devices; listener tests use local loopback sockets. Platform-specific capture tests run on their supported OS. LogAce’s own optional integration tests verify picker/forms at 80×24 and 120×32, sessions and parser output. Real account/device access is an additional manual smoke check.
 
-The lock pins every C# source hash. After edits, rerun `plugins dev`, then refresh the matching `index.json` entry’s SHA-256 of the final raw lock before submitting a PR. Do not commit compiled output, credentials or local activation state.
+The manifest lists every compiled C# source. After edits, rerun `plugins dev`; before submitting a published update, bump the version in `plugin.json`, runtime metadata and the matching `index.json` entry. No source checksums need updating. Do not commit compiled output, credentials or local activation state.

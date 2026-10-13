@@ -1,14 +1,3 @@
-// LogAce-Plugin:
-// Id: syslog.source
-// Version: 1.0.0
-// DisplayName: Syslog sink
-// Kind: Source
-// EntryPoint: LogAce.Plugins.Syslog.SyslogSourcePlugin
-// ApiVersion: 1
-// Capabilities: ProvideSourceConfigurationUi, UsesNetwork, ReadsLocalFiles, WritesLocalFiles
-// Description: Receive syslog messages over UDP and TCP with newline or octet-counted framing.
-// Packages:
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,7 +18,7 @@ public sealed class SyslogSourcePlugin : ILogAceSourcePlugin
     {
         get;
     } = new("syslog.source", "Syslog sink", "Receive syslog messages over UDP and TCP with newline or octet-counted framing.", PluginKind.Source,
-        Capabilities: ["ProvideSourceConfigurationUi", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
+        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
 
     /// <summary>Source-picker category and search aliases.</summary>
     public PluginSourcePresentation Presentation { get; } = new("Listeners", ["syslog", "udp", "tcp", "rfc3164", "rfc5424", "receiver"]);

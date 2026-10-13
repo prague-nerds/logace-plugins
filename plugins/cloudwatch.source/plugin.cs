@@ -1,14 +1,3 @@
-// LogAce-Plugin:
-// Id: cloudwatch.source
-// Version: 1.0.0
-// DisplayName: AWS CloudWatch Logs
-// Kind: Source
-// EntryPoint: LogAce.Plugins.CloudWatch.CloudWatchSourcePlugin
-// ApiVersion: 1
-// Capabilities: ProvideSourceConfigurationUi, RunsProcesses, UsesNetwork, ReadsLocalFiles, WritesLocalFiles
-// Description: CloudWatch log group snapshots and live streams through AWS CLI v2.
-// Packages:
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,7 +17,7 @@ public sealed class CloudWatchSourcePlugin : ILogAceSourcePlugin
     /// <summary>Capabilities describe behavior for review, not sandbox permissions.</summary>
     public PluginMetadata Metadata { get; } = new("cloudwatch.source", "AWS CloudWatch Logs",
         "CloudWatch log group snapshots and live streams through AWS CLI v2.", PluginKind.Source,
-        Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
+        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
     /// <summary>The shared picker supplies category navigation and alias search.</summary>
     public PluginSourcePresentation Presentation { get; } = new("Cloud", ["amazon", "aws", "cloudwatch", "logs", "snapshot", "follow"]);
     /// <summary>Keep the former interactive default: a one-hour snapshot.</summary>

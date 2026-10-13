@@ -51,8 +51,8 @@ dotnet test submodules/logace-plugins/tests/DockerSource.Tests/DockerSource.Test
 dotnet test LogAce.Tests --filter 'FullyQualifiedName~DockerSource'
 ```
 
-Repeat `plugins dev` and restart the TUI after editing. It updates the declared
-source hashes, builds locally and registers this plugin in `.local/plugins`.
+Repeat `plugins dev` and restart the TUI after editing. It builds the manifest-listed
+sources locally and registers this plugin in `.local/plugins`.
 The host's ordinary source review/approval is required for catalog installation.
 
 In a standalone catalog checkout, pass the LogAce checkout explicitly:
@@ -145,8 +145,8 @@ has. Use a durable log collector when complete retention is required.
 
 ## Contributing
 
-Submit changes through a PR to this repository. Update source hashes in
-`plugin.lock.json`, then the SHA-256 of the final raw lock bytes in `index.json`.
-Metadata and capabilities must match in the source header and index. Runtime code
+Submit changes through a PR to this repository. Bump the version in `plugin.json`,
+runtime metadata and `index.json`. Metadata and capabilities must match in the
+manifest and index; no source checksums need updating. Runtime code
 must stay on the public API; add regression coverage for changes to configuration,
 cancellation, cleanup or reconnect behavior. See [CONTRIBUTING](../../CONTRIBUTING.md).

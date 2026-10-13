@@ -1,0 +1,32 @@
+{
+  "manifestVersion": 1,
+  "id": "cloudwatch.source",
+  "version": "1.0.1",
+  "displayName": "AWS CloudWatch Logs",
+  "description": "CloudWatch log group snapshots and live streams through AWS CLI v2.",
+  "kind": "source",
+  "entryPoint": "LogAce.Plugins.CloudWatch.CloudWatchSourcePlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "sources": [
+    "CloudWatchCli.cs",
+    "CloudWatchConfiguration.cs",
+    "CloudWatchFollowCursor.cs",
+    "CloudWatchGroupCatalog.cs",
+    "CloudWatchLogSource.cs",
+    "plugin.cs"
+  ],
+  "capabilities": [
+    "ProvideSourceConfigurationUi",
+    "RunsProcesses",
+    "UsesNetwork",
+    "ReadsLocalFiles",
+    "WritesLocalFiles"
+  ],
+  "packages": [],
+  "ui": {
+    "modes": [
+      "declarativeForm"
+    ]
+  }
+}

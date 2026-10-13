@@ -1,0 +1,42 @@
+{
+  "manifestVersion": 1,
+  "id": "gcloud.source",
+  "version": "1.0.1",
+  "displayName": "GCP Cloud Logging",
+  "description": "Cloud Logging snapshots and live streams through gcloud.",
+  "kind": "source",
+  "entryPoint": "LogAce.Plugins.Gcp.GcpSourcePlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "sources": [
+    "Browse.cs",
+    "BrowseOption.cs",
+    "CliLineFollowSession.cs",
+    "CloudCliProcess.cs",
+    "Configuration.cs",
+    "GcpLoggingOpenMode.cs",
+    "GcpLoggingSourceFactory.cs",
+    "GcpLoggingSourceOptions.cs",
+    "GcpProjectCatalog.cs",
+    "GcpProjectEntry.cs",
+    "IStreamingOutputTransformer.cs",
+    "JsonStreamToNdjsonTransformer.cs",
+    "PlainTextOutputTransformer.cs",
+    "SourceRuntime.cs",
+    "TemporaryFileLifetime.cs",
+    "plugin.cs"
+  ],
+  "capabilities": [
+    "ProvideSourceConfigurationUi",
+    "RunsProcesses",
+    "UsesNetwork",
+    "ReadsLocalFiles",
+    "WritesLocalFiles"
+  ],
+  "packages": [],
+  "ui": {
+    "modes": [
+      "declarativeForm"
+    ]
+  }
+}

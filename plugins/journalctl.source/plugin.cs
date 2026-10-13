@@ -1,14 +1,3 @@
-// LogAce-Plugin:
-// Id: journalctl.source
-// Version: 1.0.0
-// DisplayName: Journalctl service
-// Kind: Source
-// EntryPoint: LogAce.Plugins.Journalctl.JournalctlSourcePlugin
-// ApiVersion: 1
-// Capabilities: ProvideSourceConfigurationUi, RunsProcesses, ReadsLocalFiles, WritesLocalFiles
-// Description: Local systemd journal snapshots and live streams through journalctl.
-// Packages:
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,7 +19,7 @@ public sealed class JournalctlSourcePlugin : ILogAceSourcePlugin
     {
         get;
     } = new("journalctl.source", "Journalctl service", "Local systemd journal snapshots and live streams through journalctl.", PluginKind.Source,
-        Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "ReadsLocalFiles", "WritesLocalFiles"]);
+        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "ReadsLocalFiles", "WritesLocalFiles"]);
 
     /// <summary>Source-picker category and search aliases.</summary>
     public PluginSourcePresentation Presentation { get; } = new("Devices & system", ["linux", "systemd", "journalctl", "journal", "service"]);

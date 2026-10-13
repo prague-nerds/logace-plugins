@@ -1,14 +1,3 @@
-// LogAce-Plugin:
-// Id: oslog.source
-// Version: 1.0.0
-// DisplayName: macOS unified log
-// Kind: Source
-// EntryPoint: LogAce.Plugins.OsLog.OsLogSourcePlugin
-// ApiVersion: 1
-// Capabilities: ProvideSourceConfigurationUi, RunsProcesses, ReadsLocalFiles, WritesLocalFiles
-// Description: Host macOS unified log snapshots and live streams through the log command.
-// Packages:
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,7 +19,7 @@ public sealed class OsLogSourcePlugin : ILogAceSourcePlugin
     {
         get;
     } = new("oslog.source", "macOS unified log", "Host macOS unified log snapshots and live streams through the log command.", PluginKind.Source,
-        Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "ReadsLocalFiles", "WritesLocalFiles"]);
+        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "ReadsLocalFiles", "WritesLocalFiles"]);
 
     /// <summary>Source-picker category and search aliases.</summary>
     public PluginSourcePresentation Presentation { get; } = new("Devices & system", ["apple", "mac", "macos", "oslog", "unified"]);

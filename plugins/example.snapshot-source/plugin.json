@@ -1,16 +1,19 @@
 {
-  "lockVersion": 1,
+  "manifestVersion": 1,
   "id": "example.snapshot-source",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "displayName": "Text snapshot",
+  "description": "Open entered text as a temporary log snapshot.",
   "kind": "source",
   "entryPoint": "LogAce.Examples.TextSnapshotPlugin",
   "apiVersion": 1,
   "targetFramework": "net10.0",
   "sources": [
-    {
-      "path": "plugin.cs",
-      "sha256": "8be5fcb9b835b11fc8c053c44d227a3725112b83998b55a37d82d4850210c49a"
-    }
+    "plugin.cs"
+  ],
+  "capabilities": [
+    "ProvideSourceConfigurationUi",
+    "ReadsLocalFiles"
   ],
   "packages": [],
   "ui": {

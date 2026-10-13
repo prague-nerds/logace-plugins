@@ -88,7 +88,7 @@ and may remain quiet until AWS access returns. Spools grow for the tab's lifetim
 
 Capabilities in the metadata describe behavior for review; they are not sandbox
 permissions. Installing this plugin trusts its code and the system `aws` executable
-to run with the user's access. Lock/source hashes pin the exact reviewed package.
+to run with the user's access. One locally computed snapshot hash binds the manifest and source to the approved package.
 No compiled binaries, credentials or local activation state belong in this catalog.
 
 ## Develop and test
@@ -116,8 +116,8 @@ loading, legacy sessions, state migration, alias search and real Terminal.Gui
 selection/focus at 80×24 and 120×32. A real AWS account smoke test is still required
 for environment-specific credentials and IAM policies.
 
-Before submitting a PR, run `plugins dev` and tests, ensure metadata/lock identity
-agree, and copy the SHA-256 of the final **raw** lock into `index.json`. See
+Before submitting a PR, run `plugins dev` and tests, bump the version in `plugin.json`,
+runtime metadata and `index.json`, and keep their metadata aligned. See
 [CONTRIBUTING](../../CONTRIBUTING.md) for the catalog review workflow.
 
 ## AWS references
