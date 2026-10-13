@@ -17,6 +17,7 @@ Plugins are reviewable C# source with a pinned lock file. LogAce fetches one com
 | [Journalctl service](plugins/journalctl.source/README.md) | Local systemd journal snapshots and live streams through journalctl. |
 | [iOS simulator](plugins/simctl.source/README.md) | Unified log snapshots from booted iOS simulators through xcrun simctl. |
 | [Android device (logcat)](plugins/logcat.source/README.md) | Android logcat snapshots and live streams through adb. |
+| [macOS unified log](plugins/oslog.source/README.md) | Host macOS unified log snapshots and live streams through the log command. |
 | Text snapshot | Minimal declarative form example for plugin authors. |
 
 ## Local development

@@ -184,6 +184,26 @@
           "declarativeForm"
         ]
       }
+    },
+    {
+      "id": "oslog.source",
+      "version": "1.0.0",
+      "displayName": "macOS unified log",
+      "description": "Host macOS unified log snapshots and live streams through the log command.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "24535e1cbcdfa2574de57e63fd7f191235a79b72f315bf6ab8022c7ce15288da",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "RunsProcesses",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
     }
   ]
 }
