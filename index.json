@@ -143,6 +143,26 @@
           "declarativeForm"
         ]
       }
+    },
+    {
+      "id": "simctl.source",
+      "version": "1.0.0",
+      "displayName": "iOS simulator",
+      "description": "Unified log snapshots from booted iOS simulators through xcrun simctl.",
+      "kind": "source",
+      "apiVersion": 1,
+      "lockSha256": "6fb69b15ae83f0ca38ed184a6fefe07f1225ea32839ff8335d13528f73872852",
+      "capabilities": [
+        "ProvideSourceConfigurationUi",
+        "RunsProcesses",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "ui": {
+        "modes": [
+          "declarativeForm"
+        ]
+      }
     }
   ]
 }
