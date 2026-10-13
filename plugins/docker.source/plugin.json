@@ -1,0 +1,30 @@
+{
+  "manifestVersion": 1,
+  "id": "docker.source",
+  "version": "1.0.1",
+  "displayName": "Docker container",
+  "description": "Docker container log snapshots and live streams through the Docker CLI.",
+  "kind": "source",
+  "entryPoint": "LogAce.Plugins.Docker.DockerSourcePlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "sources": [
+    "plugin.cs",
+    "DockerConfiguration.cs",
+    "DockerCli.cs",
+    "DockerLogSource.cs"
+  ],
+  "capabilities": [
+    "ProvideSourceConfigurationUi",
+    "RunsProcesses",
+    "UsesNetwork",
+    "ReadsLocalFiles",
+    "WritesLocalFiles"
+  ],
+  "packages": [],
+  "ui": {
+    "modes": [
+      "declarativeForm"
+    ]
+  }
+}

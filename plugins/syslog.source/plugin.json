@@ -1,0 +1,33 @@
+{
+  "manifestVersion": 1,
+  "id": "syslog.source",
+  "version": "1.0.1",
+  "displayName": "Syslog sink",
+  "description": "Receive syslog messages over UDP and TCP with newline or octet-counted framing.",
+  "kind": "source",
+  "entryPoint": "LogAce.Plugins.Syslog.SyslogSourcePlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "sources": [
+    "Configuration.cs",
+    "SourceRuntime.cs",
+    "SyslogParsedMessage.cs",
+    "SyslogParsing.cs",
+    "SyslogSinkSourceFactory.cs",
+    "SyslogSinkSourceOptions.cs",
+    "TemporaryFileLifetime.cs",
+    "plugin.cs"
+  ],
+  "capabilities": [
+    "ProvideSourceConfigurationUi",
+    "UsesNetwork",
+    "ReadsLocalFiles",
+    "WritesLocalFiles"
+  ],
+  "packages": [],
+  "ui": {
+    "modes": [
+      "declarativeForm"
+    ]
+  }
+}

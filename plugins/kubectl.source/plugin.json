@@ -1,0 +1,32 @@
+{
+  "manifestVersion": 1,
+  "id": "kubectl.source",
+  "version": "1.0.1",
+  "displayName": "Kubernetes pod",
+  "description": "Kubernetes pod log snapshots and live streams through kubectl.",
+  "kind": "source",
+  "entryPoint": "LogAce.Plugins.Kubernetes.KubernetesSourcePlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "sources": [
+    "plugin.cs",
+    "KubernetesCli.cs",
+    "KubernetesConfiguration.cs",
+    "KubernetesFollowCursor.cs",
+    "KubernetesLogSource.cs",
+    "KubernetesPodCatalog.cs"
+  ],
+  "capabilities": [
+    "ProvideSourceConfigurationUi",
+    "RunsProcesses",
+    "UsesNetwork",
+    "ReadsLocalFiles",
+    "WritesLocalFiles"
+  ],
+  "packages": [],
+  "ui": {
+    "modes": [
+      "declarativeForm"
+    ]
+  }
+}

@@ -1,14 +1,3 @@
-// LogAce-Plugin:
-// Id: example.snapshot-source
-// Version: 1.0.0
-// DisplayName: Text snapshot
-// Kind: Source
-// EntryPoint: LogAce.Examples.TextSnapshotPlugin
-// ApiVersion: 1
-// Capabilities: ProvideSourceConfigurationUi, ReadsLocalFiles
-// Description: Open entered text as a temporary log snapshot.
-// Packages:
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,7 +12,7 @@ public sealed class TextSnapshotPlugin : ILogAceSourcePlugin
 {
     public PluginMetadata Metadata { get; } = new("example.snapshot-source", "Text snapshot",
         "Open entered text as a temporary log snapshot.", PluginKind.Source,
-        Capabilities: ["ProvideSourceConfigurationUi", "ReadsLocalFiles"]);
+        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "ReadsLocalFiles"]);
 
     public PluginSourcePresentation Presentation { get; } = new("Examples", ["text", "snapshot"]);
 

@@ -1,14 +1,3 @@
-// LogAce-Plugin:
-// Id: gcloud.source
-// Version: 1.0.0
-// DisplayName: GCP Cloud Logging
-// Kind: Source
-// EntryPoint: LogAce.Plugins.Gcp.GcpSourcePlugin
-// ApiVersion: 1
-// Capabilities: ProvideSourceConfigurationUi, RunsProcesses, UsesNetwork, ReadsLocalFiles, WritesLocalFiles
-// Description: Cloud Logging snapshots and live streams through gcloud.
-// Packages:
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,7 +19,7 @@ public sealed class GcpSourcePlugin : ILogAceSourcePlugin
     {
         get;
     } = new("gcloud.source", "GCP Cloud Logging", "Cloud Logging snapshots and live streams through gcloud.", PluginKind.Source,
-        Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
+        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
 
     /// <summary>Source-picker category and search aliases.</summary>
     public PluginSourcePresentation Presentation { get; } = new("Cloud", ["google", "gcp", "gcloud", "logging", "snapshot", "follow"]);

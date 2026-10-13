@@ -1,14 +1,3 @@
-// LogAce-Plugin:
-// Id: azure.source
-// Version: 1.0.0
-// DisplayName: Azure logs
-// Kind: Source
-// EntryPoint: LogAce.Plugins.Azure.AzureSourcePlugin
-// ApiVersion: 1
-// Capabilities: ProvideSourceConfigurationUi, RunsProcesses, UsesNetwork, ReadsLocalFiles, WritesLocalFiles
-// Description: Azure App Service streams and Log Analytics queries through Azure CLI.
-// Packages:
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,7 +18,7 @@ public sealed class AzureSourcePlugin : ILogAceSourcePlugin
     {
         get;
     } = new("azure.source", "Azure logs", "Azure App Service streams and Log Analytics queries through Azure CLI.", PluginKind.Source,
-        Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
+        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
 
     /// <summary>Source-picker category and search aliases.</summary>
     public PluginSourcePresentation Presentation { get; } = new("Cloud", ["microsoft", "azure", "az", "kql", "analytics", "webapp"]);

@@ -63,7 +63,7 @@ registry/cache; it does not disable installation from the official catalog.
 | `KubernetesPodCatalog.cs` | Cancellable JSON discovery, namespace scoping and container lists. |
 | `KubernetesLogSource.cs` | Snapshot capture, source-owned follow worker and spool cleanup. |
 | `KubernetesFollowCursor.cs` | Nanosecond-preserving reconnect and boundary occurrence counts. |
-| `plugin.lock.json` | Explicit source hashes and declarative UI/API compatibility. |
+| `plugin.json` | Explicit source paths, metadata and declarative UI/API compatibility. |
 
 The entry point implements `ILogAceSourcePlugin`. `Presentation` supplies the picker
 category and search aliases; the host omits empty categories automatically.
@@ -140,6 +140,6 @@ integration tests compile/load the actual package, restore a legacy session and
 exercise host forms at 80×24 and 120×32. A real cluster smoke test remains necessary
 for your authentication setup and kubectl/server combination.
 
-Repeat `plugins dev` and restart after edits. Before submitting a PR, refresh the
-declared source hashes and `index.json`'s raw lock SHA-256. No dependency packages,
+Repeat `plugins dev` and restart after edits. Before submitting a PR, bump the
+version in `plugin.json`, runtime metadata and `index.json`; keep their metadata aligned. No dependency packages,
 build scripts, precompiled binaries, local registry or generated state ship here.

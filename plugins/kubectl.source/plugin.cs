@@ -1,14 +1,3 @@
-// LogAce-Plugin:
-// Id: kubectl.source
-// Version: 1.0.0
-// DisplayName: Kubernetes pod
-// Kind: Source
-// EntryPoint: LogAce.Plugins.Kubernetes.KubernetesSourcePlugin
-// ApiVersion: 1
-// Capabilities: ProvideSourceConfigurationUi, RunsProcesses, UsesNetwork, ReadsLocalFiles, WritesLocalFiles
-// Description: Kubernetes pod log snapshots and live streams through kubectl.
-// Packages:
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,7 +17,7 @@ public sealed class KubernetesSourcePlugin : ILogAceSourcePlugin
     /// <summary>Capabilities describe reviewable behavior, not sandbox permissions.</summary>
     public PluginMetadata Metadata { get; } = new("kubectl.source", "Kubernetes pod",
         "Kubernetes pod log snapshots and live streams through kubectl.", PluginKind.Source,
-        Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
+        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
 
     /// <summary>The host creates the Containers category when a source occupies it.</summary>
     public PluginSourcePresentation Presentation { get; } = new("Containers", ["k8s", "kubectl", "kubernetes", "pod", "snapshot", "follow"]);
