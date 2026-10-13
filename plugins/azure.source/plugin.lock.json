@@ -1,0 +1,69 @@
+{
+  "lockVersion": 1,
+  "id": "azure.source",
+  "version": "1.0.0",
+  "kind": "source",
+  "entryPoint": "LogAce.Plugins.Azure.AzureSourcePlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "sources": [
+    {
+      "path": "AzureAppServiceOptions.cs",
+      "sha256": "4741516189f57b56aed7077d1a4449627f313bc0497808fb6fa1bab833a9c81f"
+    },
+    {
+      "path": "AzureAppServiceSourceFactory.cs",
+      "sha256": "aa0389f78a18c661cb7f30c23051f4f2d87d72de9271b91cc63497cbfc759292"
+    },
+    {
+      "path": "AzureLogAnalyticsOptions.cs",
+      "sha256": "83aa11d66c7f189bc96716604c1bdc1640d86ba4facbfea98ede052fe2a16642"
+    },
+    {
+      "path": "AzureLogAnalyticsSourceFactory.cs",
+      "sha256": "060c2b36e06f8ead39807f4c854cfec4334ae44e037935b18b72001a9db4536b"
+    },
+    {
+      "path": "CliLineFollowSession.cs",
+      "sha256": "647c21b45c0ccc4b2a5c0dd0da6e9578cb90ba4ab83f4e97691888d24cfe1c67"
+    },
+    {
+      "path": "CloudCliProcess.cs",
+      "sha256": "ac47935b434175b78d061f4673c95a38b85e47f057885d833734fe92b889cf30"
+    },
+    {
+      "path": "Configuration.cs",
+      "sha256": "3ed3f114e283e8f54d441f181725a49901e9a013b67eb689d6d3a8a26c991a5f"
+    },
+    {
+      "path": "IStreamingOutputTransformer.cs",
+      "sha256": "92e03d0dd18c73d996645f0f561bf1a8126d152a2e00543c74d0aaeec1d6b4d8"
+    },
+    {
+      "path": "JsonStreamToNdjsonTransformer.cs",
+      "sha256": "4101c87ecf67765fb039e45fa5cd74d94af503b171af76a405b7baaddf795a9c"
+    },
+    {
+      "path": "PlainTextOutputTransformer.cs",
+      "sha256": "98995832e71bad79e3b1e9a89de17fe917b69bfd7dd3124084f1e644dea9955a"
+    },
+    {
+      "path": "SourceRuntime.cs",
+      "sha256": "84df536a9484035cdb0743562d8b5a31c0ee09158f64e3babacea9c2b4894ce4"
+    },
+    {
+      "path": "TemporaryFileLifetime.cs",
+      "sha256": "0b3a7150a3d9ac7c041de344002cffd4317362e48d6d35ae20e77f78a46228ed"
+    },
+    {
+      "path": "plugin.cs",
+      "sha256": "6d7f0e3788e140697218a81865b3d3dd325dc5dd1f1a6697180c7c1ddd8013a1"
+    }
+  ],
+  "packages": [],
+  "ui": {
+    "modes": [
+      "declarativeForm"
+    ]
+  }
+}
