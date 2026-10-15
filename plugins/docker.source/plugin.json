@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "docker.source",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "Docker container",
   "description": "Docker container log snapshots and live streams through the Docker CLI.",
   "kind": "source",
@@ -26,5 +26,8 @@
     "modes": [
       "declarativeForm"
     ]
-  }
+  },
+  "requiredParsers": [
+    "docker"
+  ]
 }

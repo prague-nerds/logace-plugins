@@ -1,0 +1,21 @@
+{
+  "id": "syslog",
+  "version": "1.0.0",
+  "displayName": "Syslog (RFC 3164 / RFC 5424)",
+  "description": "Syslog in RFC 3164 or RFC 5424 format, detected automatically.",
+  "kind": "parser",
+  "entryPoint": "SyslogParserPlugin",
+  "apiVersion": 1,
+  "capabilities": [
+    "ParseCustomText"
+  ],
+  "packages": [],
+  "sources": [
+    "plugin.cs",
+    "SyslogRecordProvider.cs",
+    "SyslogParsing.cs",
+    "SyslogParsedMessage.cs"
+  ],
+  "manifestVersion": 1,
+  "targetFramework": "net10.0"
+}

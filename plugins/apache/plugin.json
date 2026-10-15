@@ -1,0 +1,19 @@
+{
+  "id": "apache",
+  "version": "1.0.0",
+  "displayName": "Apache / W3C Combined",
+  "description": "Apache combined access logs.",
+  "kind": "parser",
+  "entryPoint": "ApacheParserPlugin",
+  "apiVersion": 1,
+  "capabilities": [
+    "ParseCustomText"
+  ],
+  "packages": [],
+  "sources": [
+    "plugin.cs",
+    "ApacheCombinedRecordProvider.cs"
+  ],
+  "manifestVersion": 1,
+  "targetFramework": "net10.0"
+}

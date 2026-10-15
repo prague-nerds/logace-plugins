@@ -1,0 +1,19 @@
+{
+  "id": "nginx-error",
+  "version": "1.0.0",
+  "displayName": "NGINX Error",
+  "description": "NGINX error logs, including multiline messages.",
+  "kind": "parser",
+  "entryPoint": "NginxErrorParserPlugin",
+  "apiVersion": 1,
+  "capabilities": [
+    "ParseCustomText"
+  ],
+  "packages": [],
+  "sources": [
+    "plugin.cs",
+    "NginxErrorRecordProvider.cs"
+  ],
+  "manifestVersion": 1,
+  "targetFramework": "net10.0"
+}

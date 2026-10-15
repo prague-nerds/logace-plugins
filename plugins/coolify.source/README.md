@@ -89,7 +89,7 @@ Coolify commonly returns deployment logs as a JSON-encoded array. The plugin
 renders each record's timestamp, stdout/stderr type and output, preserving
 multiline messages, repeated messages and debug records marked `hidden`. Decoded
 arrays and plain text are also supported. Runtime and deployment logs use
-LogAce's built-in Docker timestamp profile.
+the optional `docker` timestamp parser, installed as a source dependency.
 
 ## Polling, failures and lifetime
 

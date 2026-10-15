@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "coolify.source",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "displayName": "Coolify logs",
   "description": "Browse Coolify applications and read runtime or deployment logs with live polling.",
   "kind": "source",
@@ -32,5 +32,8 @@
     "modes": [
       "declarativeForm"
     ]
-  }
+  },
+  "requiredParsers": [
+    "docker"
+  ]
 }

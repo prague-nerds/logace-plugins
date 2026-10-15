@@ -17,7 +17,7 @@ public sealed class CloudWatchSourcePlugin : ILogAceSourcePlugin
     /// <summary>Capabilities describe behavior for review, not sandbox permissions.</summary>
     public PluginMetadata Metadata { get; } = new("cloudwatch.source", "AWS CloudWatch Logs",
         "CloudWatch log group snapshots and live streams through AWS CLI v2.", PluginKind.Source,
-        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
+        Version: "1.0.2", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
     /// <summary>The shared picker supplies category navigation and alias search.</summary>
     public PluginSourcePresentation Presentation { get; } = new("Cloud", ["amazon", "aws", "cloudwatch", "logs", "snapshot", "follow"]);
     /// <summary>Keep the former interactive default: a one-hour snapshot.</summary>

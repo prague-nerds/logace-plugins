@@ -28,7 +28,7 @@ public sealed class CoolifySourcePlugin : ILogAceSourcePlugin, ILogAcePluginWith
         get;
     } = new("coolify.source", "Coolify logs",
         "Browse Coolify applications and read runtime or deployment logs with live polling.", PluginKind.Source,
-        Version: "1.1.0", Capabilities: ["ProvideSourceConfigurationUi", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles", "UsesPluginSettings", "UsesPluginSecrets"]);
+        Version: "1.1.1", Capabilities: ["ProvideSourceConfigurationUi", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles", "UsesPluginSettings", "UsesPluginSecrets"]);
 
     public PluginSourcePresentation Presentation { get; } = new("Cloud", ["coolify", "application", "docker", "build", "deployment", "polling"]);
 

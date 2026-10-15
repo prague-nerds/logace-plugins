@@ -1,9 +1,9 @@
 {
-  "version": 2,
+  "version": 4,
   "plugins": [
     {
       "id": "cloudwatch.source",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "displayName": "AWS CloudWatch Logs",
       "description": "CloudWatch log group snapshots and live streams through AWS CLI v2.",
       "kind": "source",
@@ -19,11 +19,25 @@
         "modes": [
           "declarativeForm"
         ]
-      }
+      },
+      "presentation": {
+        "category": "Cloud",
+        "keywords": [
+          "amazon",
+          "aws",
+          "cloudwatch",
+          "logs",
+          "snapshot",
+          "follow"
+        ]
+      },
+      "requiredParsers": [
+        "cloudwatch"
+      ]
     },
     {
       "id": "coolify.source",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "displayName": "Coolify logs",
       "description": "Browse Coolify applications and read runtime or deployment logs with live polling.",
       "kind": "source",
@@ -40,11 +54,25 @@
         "modes": [
           "declarativeForm"
         ]
-      }
+      },
+      "presentation": {
+        "category": "Cloud",
+        "keywords": [
+          "coolify",
+          "application",
+          "docker",
+          "build",
+          "deployment",
+          "polling"
+        ]
+      },
+      "requiredParsers": [
+        "docker"
+      ]
     },
     {
       "id": "docker.source",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "displayName": "Docker container",
       "description": "Docker container log snapshots and live streams through the Docker CLI.",
       "kind": "source",
@@ -60,11 +88,23 @@
         "modes": [
           "declarativeForm"
         ]
-      }
+      },
+      "presentation": {
+        "category": "Containers",
+        "keywords": [
+          "docker",
+          "container",
+          "snapshot",
+          "follow"
+        ]
+      },
+      "requiredParsers": [
+        "docker"
+      ]
     },
     {
       "id": "kubectl.source",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "displayName": "Kubernetes pod",
       "description": "Kubernetes pod log snapshots and live streams through kubectl.",
       "kind": "source",
@@ -80,7 +120,21 @@
         "modes": [
           "declarativeForm"
         ]
-      }
+      },
+      "presentation": {
+        "category": "Containers",
+        "keywords": [
+          "k8s",
+          "kubectl",
+          "kubernetes",
+          "pod",
+          "snapshot",
+          "follow"
+        ]
+      },
+      "requiredParsers": [
+        "kubectl"
+      ]
     },
     {
       "id": "example.snapshot-source",
@@ -96,6 +150,13 @@
       "ui": {
         "modes": [
           "declarativeForm"
+        ]
+      },
+      "presentation": {
+        "category": "Examples",
+        "keywords": [
+          "text",
+          "snapshot"
         ]
       }
     },
@@ -117,6 +178,17 @@
         "modes": [
           "declarativeForm"
         ]
+      },
+      "presentation": {
+        "category": "Cloud",
+        "keywords": [
+          "google",
+          "gcp",
+          "gcloud",
+          "logging",
+          "snapshot",
+          "follow"
+        ]
       }
     },
     {
@@ -137,11 +209,22 @@
         "modes": [
           "declarativeForm"
         ]
+      },
+      "presentation": {
+        "category": "Cloud",
+        "keywords": [
+          "microsoft",
+          "azure",
+          "az",
+          "kql",
+          "analytics",
+          "webapp"
+        ]
       }
     },
     {
       "id": "journalctl.source",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "displayName": "Journalctl service",
       "description": "Local systemd journal snapshots and live streams through journalctl.",
       "kind": "source",
@@ -156,7 +239,20 @@
         "modes": [
           "declarativeForm"
         ]
-      }
+      },
+      "presentation": {
+        "category": "Devices & system",
+        "keywords": [
+          "linux",
+          "systemd",
+          "journalctl",
+          "journal",
+          "service"
+        ]
+      },
+      "requiredParsers": [
+        "journalctl"
+      ]
     },
     {
       "id": "simctl.source",
@@ -175,11 +271,22 @@
         "modes": [
           "declarativeForm"
         ]
+      },
+      "presentation": {
+        "category": "Devices & system",
+        "keywords": [
+          "apple",
+          "ios",
+          "iphone",
+          "xcode",
+          "simctl",
+          "simulator"
+        ]
       }
     },
     {
       "id": "logcat.source",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "displayName": "Android device (logcat)",
       "description": "Android logcat snapshots and live streams through adb.",
       "kind": "source",
@@ -195,7 +302,20 @@
         "modes": [
           "declarativeForm"
         ]
-      }
+      },
+      "presentation": {
+        "category": "Devices & system",
+        "keywords": [
+          "android",
+          "adb",
+          "logcat",
+          "mobile",
+          "device"
+        ]
+      },
+      "requiredParsers": [
+        "logcat"
+      ]
     },
     {
       "id": "oslog.source",
@@ -214,11 +334,21 @@
         "modes": [
           "declarativeForm"
         ]
+      },
+      "presentation": {
+        "category": "Devices & system",
+        "keywords": [
+          "apple",
+          "mac",
+          "macos",
+          "oslog",
+          "unified"
+        ]
       }
     },
     {
       "id": "otel.source",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "displayName": "OpenTelemetry logs",
       "description": "Receive OpenTelemetry logs over OTLP/HTTP as JSON or protobuf.",
       "kind": "source",
@@ -233,11 +363,25 @@
         "modes": [
           "declarativeForm"
         ]
-      }
+      },
+      "presentation": {
+        "category": "Listeners",
+        "keywords": [
+          "otel",
+          "otlp",
+          "opentelemetry",
+          "http",
+          "sink",
+          "receiver"
+        ]
+      },
+      "requiredParsers": [
+        "otel-logs"
+      ]
     },
     {
       "id": "syslog.source",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "displayName": "Syslog sink",
       "description": "Receive syslog messages over UDP and TCP with newline or octet-counted framing.",
       "kind": "source",
@@ -252,7 +396,164 @@
         "modes": [
           "declarativeForm"
         ]
-      }
+      },
+      "presentation": {
+        "category": "Listeners",
+        "keywords": [
+          "syslog",
+          "udp",
+          "tcp",
+          "rfc3164",
+          "rfc5424",
+          "receiver"
+        ]
+      },
+      "requiredParsers": [
+        "syslog-sink"
+      ]
+    },
+    {
+      "id": "apache",
+      "version": "1.0.0",
+      "displayName": "Apache / W3C Combined",
+      "description": "Apache combined access logs.",
+      "kind": "parser",
+      "apiVersion": 1,
+      "capabilities": [
+        "ParseCustomText"
+      ]
+    },
+    {
+      "id": "iis",
+      "version": "1.0.0",
+      "displayName": "IIS / W3C Extended",
+      "description": "IIS W3C Extended logs. Columns follow the #Fields: header.",
+      "kind": "parser",
+      "apiVersion": 1,
+      "capabilities": [
+        "ParseCustomText"
+      ]
+    },
+    {
+      "id": "nginx-error",
+      "version": "1.0.0",
+      "displayName": "NGINX Error",
+      "description": "NGINX error logs, including multiline messages.",
+      "kind": "parser",
+      "apiVersion": 1,
+      "capabilities": [
+        "ParseCustomText"
+      ]
+    },
+    {
+      "id": "spring-boot",
+      "version": "1.0.0",
+      "displayName": "Spring Boot",
+      "description": "Spring Boot logs, including multiline messages.",
+      "kind": "parser",
+      "apiVersion": 1,
+      "capabilities": [
+        "ParseCustomText"
+      ]
+    },
+    {
+      "id": "docker",
+      "version": "1.0.0",
+      "displayName": "Docker",
+      "description": "Docker logs with timestamps.",
+      "kind": "parser",
+      "apiVersion": 1,
+      "capabilities": [
+        "ParseCustomText"
+      ]
+    },
+    {
+      "id": "kubectl",
+      "version": "1.0.0",
+      "displayName": "Kubectl",
+      "description": "Kubernetes logs with timestamps.",
+      "kind": "parser",
+      "apiVersion": 1,
+      "capabilities": [
+        "ParseCustomText"
+      ]
+    },
+    {
+      "id": "cloudwatch",
+      "version": "1.0.0",
+      "displayName": "CloudWatch",
+      "description": "CloudWatch detailed-format logs, including multiline messages.",
+      "kind": "parser",
+      "apiVersion": 1,
+      "capabilities": [
+        "ParseCustomText"
+      ]
+    },
+    {
+      "id": "journalctl",
+      "version": "1.0.0",
+      "displayName": "Journalctl",
+      "description": "systemd logs in journalctl short, short-iso or short-iso-precise format.",
+      "kind": "parser",
+      "apiVersion": 1,
+      "capabilities": [
+        "ParseCustomText"
+      ]
+    },
+    {
+      "id": "logcat",
+      "version": "1.0.0",
+      "displayName": "Logcat",
+      "description": "Android logcat in threadtime format, including multiline messages.",
+      "kind": "parser",
+      "apiVersion": 1,
+      "capabilities": [
+        "ParseCustomText"
+      ]
+    },
+    {
+      "id": "syslog",
+      "version": "1.0.0",
+      "displayName": "Syslog (RFC 3164 / RFC 5424)",
+      "description": "Syslog in RFC 3164 or RFC 5424 format, detected automatically.",
+      "kind": "parser",
+      "apiVersion": 1,
+      "capabilities": [
+        "ParseCustomText"
+      ]
+    },
+    {
+      "id": "syslog-sink",
+      "version": "1.0.0",
+      "displayName": "Syslog Sink",
+      "description": "Received syslog messages with sender, transport and severity fields.",
+      "kind": "parser",
+      "apiVersion": 1,
+      "capabilities": [
+        "ParseCustomText"
+      ]
+    },
+    {
+      "id": "otel-logs",
+      "version": "1.0.0",
+      "displayName": "OTel Logs",
+      "description": "OTLP logs with resource, scope, trace, span and message fields.",
+      "kind": "parser",
+      "apiVersion": 1,
+      "capabilities": [
+        "ParseCustomText"
+      ]
+    },
+    {
+      "id": "merged",
+      "version": "1.0.0",
+      "displayName": "Merged",
+      "description": "Tabs combined into a timeline, sorted by UTC timestamp.",
+      "kind": "parser",
+      "apiVersion": 1,
+      "capabilities": [
+        "ParseCustomText"
+      ]
     }
   ]
 }

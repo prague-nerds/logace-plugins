@@ -19,7 +19,7 @@ public sealed class LogcatSourcePlugin : ILogAceSourcePlugin
     {
         get;
     } = new("logcat.source", "Android device (logcat)", "Android logcat snapshots and live streams through adb.", PluginKind.Source,
-        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
+        Version: "1.0.2", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
 
     /// <summary>Source-picker category and search aliases.</summary>
     public PluginSourcePresentation Presentation { get; } = new("Devices & system", ["android", "adb", "logcat", "mobile", "device"]);

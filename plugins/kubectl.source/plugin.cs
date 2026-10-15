@@ -17,7 +17,7 @@ public sealed class KubernetesSourcePlugin : ILogAceSourcePlugin
     /// <summary>Capabilities describe reviewable behavior, not sandbox permissions.</summary>
     public PluginMetadata Metadata { get; } = new("kubectl.source", "Kubernetes pod",
         "Kubernetes pod log snapshots and live streams through kubectl.", PluginKind.Source,
-        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
+        Version: "1.0.2", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
 
     /// <summary>The host creates the Containers category when a source occupies it.</summary>
     public PluginSourcePresentation Presentation { get; } = new("Containers", ["k8s", "kubectl", "kubernetes", "pod", "snapshot", "follow"]);

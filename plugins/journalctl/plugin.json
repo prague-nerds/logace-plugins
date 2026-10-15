@@ -1,0 +1,21 @@
+{
+  "id": "journalctl",
+  "version": "1.0.0",
+  "displayName": "Journalctl",
+  "description": "systemd logs in journalctl short, short-iso or short-iso-precise format.",
+  "kind": "parser",
+  "entryPoint": "JournalctlParserPlugin",
+  "apiVersion": 1,
+  "capabilities": [
+    "ParseCustomText"
+  ],
+  "packages": [],
+  "sources": [
+    "plugin.cs",
+    "JournalctlRecordProvider.cs",
+    "SyslogParsing.cs",
+    "SyslogParsedMessage.cs"
+  ],
+  "manifestVersion": 1,
+  "targetFramework": "net10.0"
+}

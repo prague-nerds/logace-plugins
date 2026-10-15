@@ -4,7 +4,7 @@ The official source catalog for LogAce is the public repository **prague-nerds/l
 
 Plugins are reviewable C# source with a separate `plugin.json` manifest. LogAce fetches one Git commit, presents the manifest, source and any pinned NuGet dependencies for approval, then compiles locally. A single hash of the approved snapshot is stored locally; no source hashes are maintained in this repository. Third-party code runs with your user privileges. This is not a sandbox.
 
-`index.json` is schema version 2 and requires a LogAce host supporting separate plugin manifests. Packages live in `plugins/<id>/`; `docker.source` and `kubectl.source` provide optional Docker and Kubernetes snapshots and live streams; `example.snapshot-source` opens entered text as a temporary log for learning the API. Each package has `plugin.cs`, `plugin.json` and helper files explicitly listed in the manifest. A NuGet-only `plugin.lock.json` is needed only for dependency packages; the current plugins use none. Index entries contain no external URLs or links to other source repositories.
+`index.json` is schema version 4 and requires a LogAce host supporting separate plugin manifests. Packages live in `plugins/<id>/`; `docker.source` and `kubectl.source` provide optional Docker and Kubernetes snapshots and live streams; `example.snapshot-source` opens entered text as a temporary log for learning the API. Each package has `plugin.cs`, `plugin.json` and helper files explicitly listed in the manifest. A NuGet-only `plugin.lock.json` is needed only for dependency packages; the current plugins use none. Source entries include `presentation.category` and `presentation.keywords` matching their runtime `PluginSourcePresentation`, so Open can group and search them before installation. Hosts must support catalog version 4; updated hosts also accept version 2 and 3 indexes and caches. Index entries contain no external URLs or links to other source repositories.
 
 ## Available plugins
 
@@ -39,3 +39,7 @@ Require pull requests and maintainer approval on `main` using GitHub rulesets/br
 ## AWS CloudWatch source
 
 [`cloudwatch.source`](plugins/cloudwatch.source/README.md) provides AWS CLI v2 log group discovery, snapshots and live follow through the public source API. Its standalone tests use fake CLI fixtures; credentials stay with the AWS CLI.
+
+## Optional parser plugins
+
+The host includes only RAW, CSV/TSV, JSONL and Ad Hoc. The catalog also distributes `apache`, `iis`, `nginx-error`, `spring-boot`, `docker`, `kubectl`, `cloudwatch`, `journalctl`, `logcat`, `syslog`, `syslog-sink`, `otel-logs` and `merged` parser plugins. These IDs preserve existing sessions, layouts and highlights. Install directly from F8 or Tools → Plugins. Source entries and manifests declare `requiredParsers`; the host reviews and installs their dependencies first. For `plugins dev`, build the parser before the source in the same isolated registry. Publish this version 4 catalog before releasing a host that removes specialized built-in formats.

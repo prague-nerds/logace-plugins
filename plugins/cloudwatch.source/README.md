@@ -10,7 +10,7 @@ Install **AWS CloudWatch Logs** from **Tools → Plugins…** in LogAce, enable 
 restart. This repository is the sole catalog; new integrations are contributed
 through pull requests. The source then appears in **F2 → Cloud** and File → Open
 AWS CloudWatch Logs. Without the plugin, the `--cloudwatch-*` options explain how
-to install it before opening the TUI. The CloudWatch parser remains built-in for
+to install it before opening the TUI. The separate `cloudwatch` parser is installed as a dependency for
 ordinary log files.
 
 Install AWS CLI v2 and configure its normal credential chain, profile and region.
@@ -72,7 +72,7 @@ installed and enabled when restoring those sources.
   remain visible. A quiet source retries its original Since range.
 
 The command uses `logs tail --format detailed`, supplying timestamp, stream and
-message columns to the built-in parser. The former built-in command requested
+message columns to the optional `cloudwatch` parser. The former built-in command requested
 `short`, which omits the stream and full timestamp; this extraction corrects that
 mismatch while keeping the existing `cloudwatch://` identity and state files.
 Old `builtin.source.cloudwatch` and URI-only CloudWatch sessions are migrated by

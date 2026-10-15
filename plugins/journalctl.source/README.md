@@ -10,7 +10,7 @@ Linux with systemd, `journalctl` and `systemctl` on PATH. Log access follows the
 
 Install and enable the plugin from **Tools → Plugins…**, restart LogAce and choose **Journalctl service** in **Open**. Its category is **Devices & system**; empty categories are hidden when no enabled sources occupy them.
 
-Enter a unit or Browse services; empty unit reads the whole journal. Set tail (`all` or non-negative count), Since (empty/all, boot, duration or journalctl timestamp) and Follow. Finite captures and live reads use journal JSON, preserving the built-in journal parser format. `systemctl` discovery and opening are Linux-only. SSH journal access remains a core LogAce source.
+Enter a unit or Browse services; empty unit reads the whole journal. Set tail (`all` or non-negative count), Since (empty/all, boot, duration or journalctl timestamp) and Follow. Finite captures and live reads use journal JSON, preserving the required `journalctl` parser plugin’s format. `systemctl` discovery and opening are Linux-only. SSH journal access remains a core LogAce source.
 
 ## Configuration and compatibility
 
