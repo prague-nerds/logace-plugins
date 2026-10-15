@@ -1,20 +1,20 @@
-# Journalctl service source
+# Android device (logcat) source
 
-Optional `journalctl.source` plugin for LogAce, contributed through the official `prague-nerds/logace-plugins` catalog. The package uses public `LogAce.PluginApi` version 1 and declarative forms; it has no third-party NuGet dependencies or host-private references.
+Optional `logcat.source` plugin for LogAce, contributed through the official `prague-nerds/logace-plugins` catalog. The package uses public `LogAce.PluginApi` version 1 and declarative forms; it has no third-party NuGet dependencies or host-private references.
 
 ## Requirements
 
-Linux with systemd, `journalctl` and `systemctl` on PATH. Log access follows the current user’s journal permissions.
+Android platform-tools (`adb`) on PATH and an authorized online device/emulator. Accept the USB debugging prompt on the device first.
 
 ## Use
 
-Install and enable the plugin from **Tools → Plugins…**, restart LogAce and choose **Journalctl service** in **Open**. Its category is **Devices & system**; empty categories are hidden when no enabled sources occupy them.
+Install and enable the plugin from **Tools → Plugins…**, restart LogAce and choose **Android device (logcat)** in **Open**. Its category is **Devices & system**; empty categories are hidden when no enabled sources occupy them.
 
-Enter a unit or Browse services; empty unit reads the whole journal. Set tail (`all` or non-negative count), Since (empty/all, boot, duration or journalctl timestamp) and Follow. Finite captures and live reads use journal JSON, preserving the required `journalctl` parser plugin’s format. `systemctl` discovery and opening are Linux-only. SSH journal access remains a core LogAce source.
+Enter a serial/model or Browse devices. `any` works only when one device is online. Browse packages optionally narrows to a running app; explicit PID overrides package resolution. Choose comma-separated buffers/tags, minimum level, tail (`all` or non-negative count) and snapshot/follow. The separate Clear device buffers first checkbox explicitly runs `adb logcat -c`; it is off by default. Follow re-resolves package PID after reconnect. Timestamp cutoffs reduce replay but do not guarantee exactly-once delivery.
 
 ## Configuration and compatibility
 
-`journalctl.source` replaces `builtin.source.journalctl` and preserves the unit-based `journalctl://` identity and version 1 settings. Normalization/validation perform no external I/O. Discovery happens only through explicit Browse actions; opening performs transport/provider checks. CLI account credentials remain with the CLI and are not serialized in plugin configuration.
+`logcat.source` replaces `builtin.source.logcat`. Version 1 keeps numeric buffers/levels/modes, metadata and `adb://` identities. Normalization/validation perform no external I/O. Discovery happens only through explicit Browse actions; opening performs transport/provider checks. CLI account credentials remain with the CLI and are not serialized in plugin configuration.
 
 ## Ownership and cancellation
 
@@ -27,9 +27,9 @@ Each top-level type has its own source file. The named source factories own capt
 From a LogAce checkout with this optional catalog submodule:
 
 ```sh
-dotnet run --project LogAce -- plugins dev submodules/logace-plugins/plugins/journalctl.source
+dotnet run --project LogAce -- plugins dev submodules/logace-plugins/plugins/sources/logcat
 dotnet run --project LogAce -- --plugin-dir .local/plugins
-dotnet test submodules/logace-plugins/tests/JournalctlSource.Tests/JournalctlSource.Tests.csproj
+dotnet test submodules/logace-plugins/tests/LogcatSource.Tests/LogcatSource.Tests.csproj
 ```
 
 For a standalone catalog checkout, pass `-p:LogAceRoot=/absolute/path/to/logace` to `dotnet test`. Only `LogAce.PluginApi` is referenced; the application and Terminal.Gui are not test dependencies. CLI fixtures never contact accounts or devices; listener tests use local loopback sockets. Platform-specific capture tests run on their supported OS. LogAce’s own optional integration tests verify picker/forms at 80×24 and 120×32, sessions and parser output. Real account/device access is an additional manual smoke check.

@@ -96,7 +96,7 @@ No compiled binaries, credentials or local activation state belong in this catal
 From a LogAce checkout with the optional catalog submodule:
 
 ```sh
-dotnet run --project LogAce -- plugins dev submodules/logace-plugins/plugins/cloudwatch.source --plugin-dir .local/plugins
+dotnet run --project LogAce -- plugins dev submodules/logace-plugins/plugins/sources/cloudwatch --plugin-dir .local/plugins
 dotnet run --project LogAce -- --plugin-dir .local/plugins
 dotnet test submodules/logace-plugins/tests/CloudWatchSource.Tests/CloudWatchSource.Tests.csproj
 ```
@@ -118,7 +118,7 @@ for environment-specific credentials and IAM policies.
 
 Before submitting a PR, run `plugins dev` and tests, bump the version in `plugin.json`,
 runtime metadata and `index.json`, and keep their metadata aligned. See
-[CONTRIBUTING](../../CONTRIBUTING.md) for the catalog review workflow.
+[CONTRIBUTING](../../../CONTRIBUTING.md) for the catalog review workflow.
 
 ## AWS references
 

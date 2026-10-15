@@ -120,7 +120,7 @@ for timestamp, tail, since, container and follow semantics.
 From a LogAce checkout with this catalog initialized as its optional submodule:
 
 ```sh
-dotnet run --project LogAce -- plugins dev submodules/logace-plugins/plugins/kubectl.source
+dotnet run --project LogAce -- plugins dev submodules/logace-plugins/plugins/sources/kubectl
 dotnet run --project LogAce -- --plugin-dir .local/plugins
 dotnet test submodules/logace-plugins/tests/KubernetesSource.Tests/KubernetesSource.Tests.csproj
 dotnet test LogAce.Tests/LogAce.Tests.csproj --filter FullyQualifiedName~KubernetesSource

@@ -1,20 +1,20 @@
-# Android device (logcat) source
+# iOS simulator source
 
-Optional `logcat.source` plugin for LogAce, contributed through the official `prague-nerds/logace-plugins` catalog. The package uses public `LogAce.PluginApi` version 1 and declarative forms; it has no third-party NuGet dependencies or host-private references.
+Optional `simctl.source` plugin for LogAce, contributed through the official `prague-nerds/logace-plugins` catalog. The package uses public `LogAce.PluginApi` version 1 and declarative forms; it has no third-party NuGet dependencies or host-private references.
 
 ## Requirements
 
-Android platform-tools (`adb`) on PATH and an authorized online device/emulator. Accept the USB debugging prompt on the device first.
+macOS with Xcode command-line tools (`xcrun simctl`) and a booted iOS simulator. App metadata conversion uses macOS `/usr/bin/plutil`.
 
 ## Use
 
-Install and enable the plugin from **Tools → Plugins…**, restart LogAce and choose **Android device (logcat)** in **Open**. Its category is **Devices & system**; empty categories are hidden when no enabled sources occupy them.
+Install and enable the plugin from **Tools → Plugins…**, restart LogAce and choose **iOS simulator** in **Open**. Its category is **Devices & system**; empty categories are hidden when no enabled sources occupy them.
 
-Enter a serial/model or Browse devices. `any` works only when one device is online. Browse packages optionally narrows to a running app; explicit PID overrides package resolution. Choose comma-separated buffers/tags, minimum level, tail (`all` or non-negative count) and snapshot/follow. The separate Clear device buffers first checkbox explicitly runs `adb logcat -c`; it is off by default. Follow re-resolves package PID after reconnect. Timestamp cutoffs reduce replay but do not guarantee exactly-once delivery.
+Enter `booted`, a simulator name or UDID, or Browse simulators. Browse apps/processes supplies metadata for a narrower capture. Set bundle ID, executable/process or PID, Last duration and info/debug inclusion. This source captures unified-log NDJSON snapshots; ordinary stdout/print output is not part of the unified-log store. A running app is needed for useful app/process selection. Changing the device/app clears stale discovery metadata.
 
 ## Configuration and compatibility
 
-`logcat.source` replaces `builtin.source.logcat`. Version 1 keeps numeric buffers/levels/modes, metadata and `adb://` identities. Normalization/validation perform no external I/O. Discovery happens only through explicit Browse actions; opening performs transport/provider checks. CLI account credentials remain with the CLI and are not serialized in plugin configuration.
+`simctl.source` replaces `builtin.source.simctl` and retains version 1 configuration fields and `simctl://` identity/state paths. Normalization/validation perform no external I/O. Discovery happens only through explicit Browse actions; opening performs transport/provider checks. CLI account credentials remain with the CLI and are not serialized in plugin configuration.
 
 ## Ownership and cancellation
 
@@ -27,9 +27,9 @@ Each top-level type has its own source file. The named source factories own capt
 From a LogAce checkout with this optional catalog submodule:
 
 ```sh
-dotnet run --project LogAce -- plugins dev submodules/logace-plugins/plugins/logcat.source
+dotnet run --project LogAce -- plugins dev submodules/logace-plugins/plugins/sources/simctl
 dotnet run --project LogAce -- --plugin-dir .local/plugins
-dotnet test submodules/logace-plugins/tests/LogcatSource.Tests/LogcatSource.Tests.csproj
+dotnet test submodules/logace-plugins/tests/SimctlSource.Tests/SimctlSource.Tests.csproj
 ```
 
 For a standalone catalog checkout, pass `-p:LogAceRoot=/absolute/path/to/logace` to `dotnet test`. Only `LogAce.PluginApi` is referenced; the application and Terminal.Gui are not test dependencies. CLI fixtures never contact accounts or devices; listener tests use local loopback sockets. Platform-specific capture tests run on their supported OS. LogAce’s own optional integration tests verify picker/forms at 80×24 and 120×32, sessions and parser output. Real account/device access is an additional manual smoke check.

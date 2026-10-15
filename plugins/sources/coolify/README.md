@@ -157,7 +157,7 @@ a saved credential request that input again. Tab duplication is disabled.
 From the LogAce checkout with the plugin catalog submodule initialized:
 
 ```sh
-dotnet run --project LogAce -- plugins dev submodules/logace-plugins/plugins/coolify.source --plugin-dir .local/plugins
+dotnet run --project LogAce -- plugins dev submodules/logace-plugins/plugins/sources/coolify --plugin-dir .local/plugins
 dotnet run --project LogAce -- --plugin-dir .local/plugins
 dotnet test submodules/logace-plugins/tests/CoolifySource.Tests/CoolifySource.Tests.csproj
 ```
@@ -170,7 +170,7 @@ cancellation and cleanup without contacting a real Coolify installation. Validat
 against your installed Coolify version and team permissions for a live smoke test.
 
 The manifest lists all compiled C# files, the catalog index mirrors its metadata,
-and no dependency lock is needed. See [CONTRIBUTING](../../CONTRIBUTING.md).
+and no dependency lock is needed. See [CONTRIBUTING](../../../CONTRIBUTING.md).
 
 ## API references
 

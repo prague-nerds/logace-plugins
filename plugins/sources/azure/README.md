@@ -27,7 +27,7 @@ Each top-level type has its own source file. The named source factories own capt
 From a LogAce checkout with this optional catalog submodule:
 
 ```sh
-dotnet run --project LogAce -- plugins dev submodules/logace-plugins/plugins/azure.source
+dotnet run --project LogAce -- plugins dev submodules/logace-plugins/plugins/sources/azure
 dotnet run --project LogAce -- --plugin-dir .local/plugins
 dotnet test submodules/logace-plugins/tests/AzureSource.Tests/AzureSource.Tests.csproj
 ```

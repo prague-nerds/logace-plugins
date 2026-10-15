@@ -45,7 +45,7 @@ before starting the TUI.
 From the LogAce repository with the optional plugin submodule initialized:
 
 ```sh
-dotnet run --project LogAce -- plugins dev submodules/logace-plugins/plugins/docker.source
+dotnet run --project LogAce -- plugins dev submodules/logace-plugins/plugins/sources/docker
 dotnet run --project LogAce -- --plugin-dir .local/plugins
 dotnet test submodules/logace-plugins/tests/DockerSource.Tests/DockerSource.Tests.csproj
 dotnet test LogAce.Tests --filter 'FullyQualifiedName~DockerSource'
@@ -149,4 +149,4 @@ Submit changes through a PR to this repository. Bump the version in `plugin.json
 runtime metadata and `index.json`. Metadata and capabilities must match in the
 manifest and index; no source checksums need updating. Runtime code
 must stay on the public API; add regression coverage for changes to configuration,
-cancellation, cleanup or reconnect behavior. See [CONTRIBUTING](../../CONTRIBUTING.md).
+cancellation, cleanup or reconnect behavior. See [CONTRIBUTING](../../../CONTRIBUTING.md).
