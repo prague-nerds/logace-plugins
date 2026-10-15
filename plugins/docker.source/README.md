@@ -2,7 +2,7 @@
 
 `docker.source` opens Docker container logs as a snapshot or a live stream. It is
 an optional LogAce source plugin, extracted from the former built-in integration.
-The timestamp parser/profile named **Docker** remains built into LogAce.
+The timestamp parser/profile named **Docker** is the separate `docker` parser plugin, installed as a source dependency.
 
 ## Install and open
 

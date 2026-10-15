@@ -19,7 +19,7 @@ public sealed class JournalctlSourcePlugin : ILogAceSourcePlugin
     {
         get;
     } = new("journalctl.source", "Journalctl service", "Local systemd journal snapshots and live streams through journalctl.", PluginKind.Source,
-        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "ReadsLocalFiles", "WritesLocalFiles"]);
+        Version: "1.0.2", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "ReadsLocalFiles", "WritesLocalFiles"]);
 
     /// <summary>Source-picker category and search aliases.</summary>
     public PluginSourcePresentation Presentation { get; } = new("Devices & system", ["linux", "systemd", "journalctl", "journal", "service"]);

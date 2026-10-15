@@ -1,0 +1,19 @@
+{
+  "id": "spring-boot",
+  "version": "1.0.0",
+  "displayName": "Spring Boot",
+  "description": "Spring Boot logs, including multiline messages.",
+  "kind": "parser",
+  "entryPoint": "SpringBootParserPlugin",
+  "apiVersion": 1,
+  "capabilities": [
+    "ParseCustomText"
+  ],
+  "packages": [],
+  "sources": [
+    "plugin.cs",
+    "SpringBootRecordProvider.cs"
+  ],
+  "manifestVersion": 1,
+  "targetFramework": "net10.0"
+}

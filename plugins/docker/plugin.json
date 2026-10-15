@@ -1,0 +1,19 @@
+{
+  "id": "docker",
+  "version": "1.0.0",
+  "displayName": "Docker",
+  "description": "Docker logs with timestamps.",
+  "kind": "parser",
+  "entryPoint": "DockerParserPlugin",
+  "apiVersion": 1,
+  "capabilities": [
+    "ParseCustomText"
+  ],
+  "packages": [],
+  "sources": [
+    "plugin.cs",
+    "DockerRecordProvider.cs"
+  ],
+  "manifestVersion": 1,
+  "targetFramework": "net10.0"
+}

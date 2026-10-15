@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "kubectl.source",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "Kubernetes pod",
   "description": "Kubernetes pod log snapshots and live streams through kubectl.",
   "kind": "source",
@@ -28,5 +28,8 @@
     "modes": [
       "declarativeForm"
     ]
-  }
+  },
+  "requiredParsers": [
+    "kubectl"
+  ]
 }

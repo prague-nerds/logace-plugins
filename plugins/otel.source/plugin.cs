@@ -19,7 +19,7 @@ public sealed class OtelSourcePlugin : ILogAceSourcePlugin
     {
         get;
     } = new("otel.source", "OpenTelemetry logs", "Receive OpenTelemetry logs over OTLP/HTTP as JSON or protobuf.", PluginKind.Source,
-        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
+        Version: "1.0.2", Capabilities: ["ProvideSourceConfigurationUi", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
 
     /// <summary>Source-picker category and search aliases.</summary>
     public PluginSourcePresentation Presentation { get; } = new("Listeners", ["otel", "otlp", "opentelemetry", "http", "sink", "receiver"]);

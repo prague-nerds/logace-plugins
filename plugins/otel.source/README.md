@@ -10,7 +10,7 @@ A free local TCP port and OTLP/HTTP senders. No external CLI or SDK is needed.
 
 Install and enable the plugin from **Tools → Plugins…**, restart LogAce and choose **OpenTelemetry logs** in **Open**. Its category is **Listeners**; empty categories are hidden when no enabled sources occupy them.
 
-Set bind address, HTTP port and path (defaults: 127.0.0.1:4318/v1/logs). The form displays `OTEL_EXPORTER_OTLP_LOGS_ENDPOINT`, using loopback for wildcard binds. Send POST requests with OTLP JSON or protobuf; gzip is supported. Wrong methods/routes and malformed bodies return HTTP errors. Decompressed requests are limited to 64 MiB. Incoming resource/scope/log fields are normalized to the built-in `otel-logs` NDJSON schema. The listener provides neither TLS nor authentication; use a trusted interface/network or an appropriate proxy. It is a live session, not a durable collector.
+Set bind address, HTTP port and path (defaults: 127.0.0.1:4318/v1/logs). The form displays `OTEL_EXPORTER_OTLP_LOGS_ENDPOINT`, using loopback for wildcard binds. Send POST requests with OTLP JSON or protobuf; gzip is supported. Wrong methods/routes and malformed bodies return HTTP errors. Decompressed requests are limited to 64 MiB. Incoming resource/scope/log fields are normalized to the `otel-logs` parser plugin’s NDJSON schema. The listener provides neither TLS nor authentication; use a trusted interface/network or an appropriate proxy. It is a live session, not a durable collector.
 
 ## Configuration and compatibility
 

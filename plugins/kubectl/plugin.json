@@ -1,0 +1,19 @@
+{
+  "id": "kubectl",
+  "version": "1.0.0",
+  "displayName": "Kubectl",
+  "description": "Kubernetes logs with timestamps.",
+  "kind": "parser",
+  "entryPoint": "KubectlParserPlugin",
+  "apiVersion": 1,
+  "capabilities": [
+    "ParseCustomText"
+  ],
+  "packages": [],
+  "sources": [
+    "plugin.cs",
+    "DockerRecordProvider.cs"
+  ],
+  "manifestVersion": 1,
+  "targetFramework": "net10.0"
+}

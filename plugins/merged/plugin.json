@@ -1,0 +1,19 @@
+{
+  "id": "merged",
+  "version": "1.0.0",
+  "displayName": "Merged",
+  "description": "Tabs combined into a timeline, sorted by UTC timestamp.",
+  "kind": "parser",
+  "entryPoint": "MergedParserPlugin",
+  "apiVersion": 1,
+  "capabilities": [
+    "ParseCustomText"
+  ],
+  "packages": [],
+  "sources": [
+    "plugin.cs",
+    "MergedRecordProvider.cs"
+  ],
+  "manifestVersion": 1,
+  "targetFramework": "net10.0"
+}

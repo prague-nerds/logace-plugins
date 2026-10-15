@@ -2,7 +2,7 @@
 
 `kubectl.source` is an optional LogAce source plugin for snapshots and live streams
 from Kubernetes pods. It replaces the former built-in kubectl source and uses only
-`LogAce.PluginApi` and .NET libraries. The timestamp parser stays built into LogAce.
+`LogAce.PluginApi` and .NET libraries. The timestamp parser is the separate `kubectl` parser plugin, installed as a source dependency.
 
 ## Requirements and installation
 

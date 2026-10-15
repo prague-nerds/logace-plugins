@@ -1,0 +1,19 @@
+{
+  "id": "cloudwatch",
+  "version": "1.0.0",
+  "displayName": "CloudWatch",
+  "description": "CloudWatch detailed-format logs, including multiline messages.",
+  "kind": "parser",
+  "entryPoint": "CloudwatchParserPlugin",
+  "apiVersion": 1,
+  "capabilities": [
+    "ParseCustomText"
+  ],
+  "packages": [],
+  "sources": [
+    "plugin.cs",
+    "CloudWatchRecordProvider.cs"
+  ],
+  "manifestVersion": 1,
+  "targetFramework": "net10.0"
+}

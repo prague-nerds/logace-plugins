@@ -1,0 +1,19 @@
+{
+  "id": "iis",
+  "version": "1.0.0",
+  "displayName": "IIS / W3C Extended",
+  "description": "IIS W3C Extended logs. Columns follow the #Fields: header.",
+  "kind": "parser",
+  "entryPoint": "IisParserPlugin",
+  "apiVersion": 1,
+  "capabilities": [
+    "ParseCustomText"
+  ],
+  "packages": [],
+  "sources": [
+    "plugin.cs",
+    "IisRecordProvider.cs"
+  ],
+  "manifestVersion": 1,
+  "targetFramework": "net10.0"
+}

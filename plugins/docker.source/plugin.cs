@@ -18,7 +18,7 @@ public sealed class DockerSourcePlugin : ILogAceSourcePlugin
     /// <summary>Capabilities are review disclosures, not runtime permission grants.</summary>
     public PluginMetadata Metadata { get; } = new("docker.source", "Docker container",
         "Docker container log snapshots and live streams through the Docker CLI.", PluginKind.Source,
-        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
+        Version: "1.0.2", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
 
     /// <summary>The host places this source in its searchable source picker.</summary>
     public PluginSourcePresentation Presentation { get; } = new("Containers", ["docker", "container", "snapshot", "follow"]);

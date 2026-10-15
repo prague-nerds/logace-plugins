@@ -10,7 +10,7 @@ Free local UDP/TCP ports for senders. No external CLI or SDK is needed.
 
 Install and enable the plugin from **Tools → Plugins…**, restart LogAce and choose **Syslog sink** in **Open**. Its category is **Listeners**; empty categories are hidden when no enabled sources occupy them.
 
-Set bind address and UDP/TCP ports (defaults: 0.0.0.0 and 5514). Leave one port empty to disable that transport; at least one must be enabled. Receive RFC 3164/RFC 5424 messages over UDP, TCP newline/NUL delimiters or octet-counted UTF-8 frames. TCP frames are bounded to 1 MiB; oversized buffers are discarded. Structured fields and transport/remote address are written with the `#syslog-sink-v2` header for LogAce’s built-in parser. The listener provides neither TLS nor authentication; UDP delivery is best effort. It is a live session, not a durable collector.
+Set bind address and UDP/TCP ports (defaults: 0.0.0.0 and 5514). Leave one port empty to disable that transport; at least one must be enabled. Receive RFC 3164/RFC 5424 messages over UDP, TCP newline/NUL delimiters or octet-counted UTF-8 frames. TCP frames are bounded to 1 MiB; oversized buffers are discarded. Structured fields and transport/remote address are written with the `#syslog-sink-v2` header for the required `syslog-sink` parser plugin. The listener provides neither TLS nor authentication; UDP delivery is best effort. It is a live session, not a durable collector.
 
 ## Configuration and compatibility
 
