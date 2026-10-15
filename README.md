@@ -12,6 +12,7 @@ Plugins are reviewable C# source with a separate `plugin.json` manifest. LogAce 
 | --- | --- |
 | [Docker container](plugins/docker.source/README.md) | Browse containers, open snapshots and follow logs through the Docker CLI. |
 | [Kubernetes pod](plugins/kubectl.source/README.md) | Browse pods and containers, open snapshots and follow logs through kubectl. |
+| [Coolify logs](plugins/coolify.source/README.md) | Browse applications and deployment history, open runtime/build logs and follow through API polling. |
 | [GCP Cloud Logging](plugins/gcloud.source/README.md) | Cloud Logging snapshots and live streams through gcloud. |
 | [Azure logs](plugins/azure.source/README.md) | Azure App Service streams and Log Analytics queries through Azure CLI. |
 | [Journalctl service](plugins/journalctl.source/README.md) | Local systemd journal snapshots and live streams through journalctl. |

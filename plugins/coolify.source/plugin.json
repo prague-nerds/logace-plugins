@@ -1,0 +1,36 @@
+{
+  "manifestVersion": 1,
+  "id": "coolify.source",
+  "version": "1.1.0",
+  "displayName": "Coolify logs",
+  "description": "Browse Coolify applications and read runtime or deployment logs with live polling.",
+  "kind": "source",
+  "entryPoint": "LogAce.Plugins.Coolify.CoolifySourcePlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "sources": [
+    "CoolifyApiException.cs",
+    "CoolifyClient.cs",
+    "CoolifyConfiguration.cs",
+    "CoolifyConnections.cs",
+    "CoolifyLogParser.cs",
+    "CoolifyLogSession.cs",
+    "CoolifyOptions.cs",
+    "CoolifyPollCursor.cs",
+    "plugin.cs"
+  ],
+  "capabilities": [
+    "ProvideSourceConfigurationUi",
+    "UsesNetwork",
+    "ReadsLocalFiles",
+    "WritesLocalFiles",
+    "UsesPluginSettings",
+    "UsesPluginSecrets"
+  ],
+  "packages": [],
+  "ui": {
+    "modes": [
+      "declarativeForm"
+    ]
+  }
+}
