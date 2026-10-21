@@ -1,0 +1,59 @@
+{
+  "id": "bots-ip.columns",
+  "version": "1.0.0",
+  "displayName": "Bots & IP",
+  "description": "Identify crawlers and datacenters and verify crawler identity using downloaded IP ranges.",
+  "kind": "virtualColumnProvider",
+  "entryPoint": "LogAce.Columns.bots_ip.ColumnsPlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "manifestVersion": 1,
+  "capabilities": [
+    "ProvideVirtualColumns",
+    "UsesNetwork",
+    "ReadsLocalFiles",
+    "WritesLocalFiles"
+  ],
+  "packages": [],
+  "sources": [
+    "BotDatabaseStore.cs",
+    "BotDatabases.cs",
+    "BotIpDatabase.Verification.cs",
+    "BotIpDatabase.cs",
+    "ColumnAppearance.cs",
+    "ColumnDataPaths.cs",
+    "ColumnKind.cs",
+    "GlobalUsings.cs",
+    "VirtualColumnRuntime.cs",
+    "plugin.cs"
+  ],
+  "virtualColumns": [
+    {
+      "id": "bot-ip-name",
+      "displayName": "bot-ip-name",
+      "description": "Bots | Crawler name from downloaded IP ranges.",
+      "aliases": [
+        "bot-ip-name"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "bot-verification",
+      "displayName": "bot-verification",
+      "description": "Bots | Check a User-Agent against its crawler IP ranges.",
+      "aliases": [
+        "bot-verification"
+      ],
+      "parameterHint": "Sources: User-Agent, IP (in that order). Uses downloaded crawler ranges."
+    },
+    {
+      "id": "ip-datacenter",
+      "displayName": "ip-datacenter",
+      "description": "Network | Hosting provider from downloaded datacenter IP ranges.",
+      "aliases": [
+        "ip-datacenter"
+      ],
+      "parameterHint": "No extra parameters required."
+    }
+  ]
+}

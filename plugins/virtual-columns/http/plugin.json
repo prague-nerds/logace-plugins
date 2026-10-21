@@ -1,0 +1,126 @@
+{
+  "id": "http.columns",
+  "version": "1.0.0",
+  "displayName": "HTTP & URL",
+  "description": "Extract and classify HTTP requests, URLs, headers and traffic.",
+  "kind": "virtualColumnProvider",
+  "entryPoint": "LogAce.Columns.http.ColumnsPlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "manifestVersion": 1,
+  "capabilities": [
+    "ProvideVirtualColumns"
+  ],
+  "packages": [],
+  "sources": [
+    "ColumnAppearance.cs",
+    "ColumnKind.cs",
+    "GlobalUsings.cs",
+    "VirtualColumnRuntime.cs",
+    "VirtualColumnTransforms.cs",
+    "plugin.cs"
+  ],
+  "virtualColumns": [
+    {
+      "id": "http-status-class",
+      "displayName": "http-status-class",
+      "description": "HTTP | Group status codes into 2xx, 3xx, 4xx and 5xx.",
+      "aliases": [
+        "http-status-class",
+        "status-class"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "url-host",
+      "displayName": "url-host",
+      "description": "HTTP | Host from a URL.",
+      "aliases": [
+        "url-host"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "url-path",
+      "displayName": "url-path",
+      "description": "HTTP | URL path without the query string.",
+      "aliases": [
+        "url-path"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "url-query",
+      "displayName": "url-query",
+      "description": "HTTP | Query string from a URL.",
+      "aliases": [
+        "url-query"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "url-extension",
+      "displayName": "url-extension",
+      "description": "HTTP | File extension from a URL.",
+      "aliases": [
+        "url-extension"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "referrer-host",
+      "displayName": "referrer-host",
+      "description": "HTTP | Host from a referrer URL.",
+      "aliases": [
+        "referrer-host",
+        "referer-host"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "query-param",
+      "displayName": "query-param",
+      "description": "HTTP | Read one named query parameter.",
+      "aliases": [
+        "query-param"
+      ],
+      "parameterHint": "Required: name=sessionId"
+    },
+    {
+      "id": "header",
+      "displayName": "header",
+      "description": "HTTP | Read one named HTTP header.",
+      "aliases": [
+        "header"
+      ],
+      "parameterHint": "Required: name=X-Forwarded-For"
+    },
+    {
+      "id": "url-route",
+      "displayName": "url-route",
+      "description": "HTTP | Group URL paths by replacing IDs, UUIDs and hashes.",
+      "aliases": [
+        "url-route"
+      ],
+      "parameterHint": "Optional: pattern=^/orders/[0-9]+$ ; replacement=/orders/{id}"
+    },
+    {
+      "id": "resource-type",
+      "displayName": "resource-type",
+      "description": "HTTP | Classify resources by URL and Content-Type.",
+      "aliases": [
+        "resource-type"
+      ],
+      "parameterHint": "Sources: URL[, Content-Type]. Optional: api-prefixes=/api/,/graphql"
+    },
+    {
+      "id": "traffic-source",
+      "displayName": "traffic-source",
+      "description": "HTTP | Internal, search, social or external traffic from a referrer.",
+      "aliases": [
+        "traffic-source"
+      ],
+      "parameterHint": "Source: referrer. Required: internal=example.com ; Optional: search=google.com,bing.com ; social=x.com"
+    }
+  ]
+}

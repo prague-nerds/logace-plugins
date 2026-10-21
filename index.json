@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "plugins": [
     {
       "id": "cloudwatch.source",
@@ -553,6 +553,386 @@
       "apiVersion": 1,
       "capabilities": [
         "ParseCustomText"
+      ]
+    },
+    {
+      "id": "geoip.columns",
+      "version": "1.0.0",
+      "displayName": "GeoIP",
+      "description": "Enrich IP addresses with location, ASN and organization.",
+      "kind": "virtualColumnProvider",
+      "apiVersion": 1,
+      "capabilities": [
+        "ProvideVirtualColumns",
+        "UsesNetwork",
+        "ReadsLocalFiles"
+      ],
+      "virtualColumns": [
+        {
+          "id": "geoip",
+          "displayName": "geoip",
+          "description": "Network | Country, region and city for an IP address.",
+          "aliases": [
+            "geoip",
+            "geo"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "geoip-country",
+          "displayName": "geoip-country",
+          "description": "Network | Country for an IP address.",
+          "aliases": [
+            "geoip-country",
+            "country"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "geoip-region",
+          "displayName": "geoip-region",
+          "description": "Network | Region for an IP address.",
+          "aliases": [
+            "geoip-region",
+            "region"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "geoip-city",
+          "displayName": "geoip-city",
+          "description": "Network | City for an IP address.",
+          "aliases": [
+            "geoip-city",
+            "city"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "geoip-asn",
+          "displayName": "geoip-asn",
+          "description": "Network | Autonomous system number for an IP address.",
+          "aliases": [
+            "geoip-asn",
+            "asn"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "geoip-org",
+          "displayName": "geoip-org",
+          "description": "Network | Network organization for an IP address.",
+          "aliases": [
+            "geoip-org",
+            "org",
+            "organization"
+          ],
+          "parameterHint": "No extra parameters required."
+        }
+      ]
+    },
+    {
+      "id": "user-agent.columns",
+      "version": "1.0.0",
+      "displayName": "User-Agent",
+      "description": "Identify browsers, operating systems, devices and bots from User-Agent strings.",
+      "kind": "virtualColumnProvider",
+      "apiVersion": 1,
+      "capabilities": [
+        "ProvideVirtualColumns",
+        "UsesNetwork",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "virtualColumns": [
+        {
+          "id": "ua-bot",
+          "displayName": "ua-bot",
+          "description": "Bots | Detect a bot from its User-Agent (yes/no).",
+          "aliases": [
+            "ua-bot",
+            "bot"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "ua-bot-name",
+          "displayName": "ua-bot-name",
+          "description": "Bots | Bot name from its User-Agent.",
+          "aliases": [
+            "ua-bot-name",
+            "bot-name"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "ua-bot-category",
+          "displayName": "ua-bot-category",
+          "description": "Bots | Bot category from its User-Agent.",
+          "aliases": [
+            "ua-bot-category",
+            "bot-category"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "ua-browser",
+          "displayName": "ua-browser",
+          "description": "User agent | Browser name.",
+          "aliases": [
+            "ua-browser",
+            "browser"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "ua-browser-version",
+          "displayName": "ua-browser-version",
+          "description": "User agent | Browser version.",
+          "aliases": [
+            "ua-browser-version",
+            "browser-version"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "ua-os",
+          "displayName": "ua-os",
+          "description": "User agent | Operating system.",
+          "aliases": [
+            "ua-os",
+            "os"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "ua-device",
+          "displayName": "ua-device",
+          "description": "User agent | Device type or name.",
+          "aliases": [
+            "ua-device",
+            "device"
+          ],
+          "parameterHint": "No extra parameters required."
+        }
+      ]
+    },
+    {
+      "id": "bots-ip.columns",
+      "version": "1.0.0",
+      "displayName": "Bots & IP",
+      "description": "Identify crawlers and datacenters and verify crawler identity using downloaded IP ranges.",
+      "kind": "virtualColumnProvider",
+      "apiVersion": 1,
+      "capabilities": [
+        "ProvideVirtualColumns",
+        "UsesNetwork",
+        "ReadsLocalFiles",
+        "WritesLocalFiles"
+      ],
+      "virtualColumns": [
+        {
+          "id": "bot-ip-name",
+          "displayName": "bot-ip-name",
+          "description": "Bots | Crawler name from downloaded IP ranges.",
+          "aliases": [
+            "bot-ip-name"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "bot-verification",
+          "displayName": "bot-verification",
+          "description": "Bots | Check a User-Agent against its crawler IP ranges.",
+          "aliases": [
+            "bot-verification"
+          ],
+          "parameterHint": "Sources: User-Agent, IP (in that order). Uses downloaded crawler ranges."
+        },
+        {
+          "id": "ip-datacenter",
+          "displayName": "ip-datacenter",
+          "description": "Network | Hosting provider from downloaded datacenter IP ranges.",
+          "aliases": [
+            "ip-datacenter"
+          ],
+          "parameterHint": "No extra parameters required."
+        }
+      ]
+    },
+    {
+      "id": "http.columns",
+      "version": "1.0.0",
+      "displayName": "HTTP & URL",
+      "description": "Extract and classify HTTP requests, URLs, headers and traffic.",
+      "kind": "virtualColumnProvider",
+      "apiVersion": 1,
+      "capabilities": [
+        "ProvideVirtualColumns"
+      ],
+      "virtualColumns": [
+        {
+          "id": "http-status-class",
+          "displayName": "http-status-class",
+          "description": "HTTP | Group status codes into 2xx, 3xx, 4xx and 5xx.",
+          "aliases": [
+            "http-status-class",
+            "status-class"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "url-host",
+          "displayName": "url-host",
+          "description": "HTTP | Host from a URL.",
+          "aliases": [
+            "url-host"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "url-path",
+          "displayName": "url-path",
+          "description": "HTTP | URL path without the query string.",
+          "aliases": [
+            "url-path"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "url-query",
+          "displayName": "url-query",
+          "description": "HTTP | Query string from a URL.",
+          "aliases": [
+            "url-query"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "url-extension",
+          "displayName": "url-extension",
+          "description": "HTTP | File extension from a URL.",
+          "aliases": [
+            "url-extension"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "referrer-host",
+          "displayName": "referrer-host",
+          "description": "HTTP | Host from a referrer URL.",
+          "aliases": [
+            "referrer-host",
+            "referer-host"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "query-param",
+          "displayName": "query-param",
+          "description": "HTTP | Read one named query parameter.",
+          "aliases": [
+            "query-param"
+          ],
+          "parameterHint": "Required: name=sessionId"
+        },
+        {
+          "id": "header",
+          "displayName": "header",
+          "description": "HTTP | Read one named HTTP header.",
+          "aliases": [
+            "header"
+          ],
+          "parameterHint": "Required: name=X-Forwarded-For"
+        },
+        {
+          "id": "url-route",
+          "displayName": "url-route",
+          "description": "HTTP | Group URL paths by replacing IDs, UUIDs and hashes.",
+          "aliases": [
+            "url-route"
+          ],
+          "parameterHint": "Optional: pattern=^/orders/[0-9]+$ ; replacement=/orders/{id}"
+        },
+        {
+          "id": "resource-type",
+          "displayName": "resource-type",
+          "description": "HTTP | Classify resources by URL and Content-Type.",
+          "aliases": [
+            "resource-type"
+          ],
+          "parameterHint": "Sources: URL[, Content-Type]. Optional: api-prefixes=/api/,/graphql"
+        },
+        {
+          "id": "traffic-source",
+          "displayName": "traffic-source",
+          "description": "HTTP | Internal, search, social or external traffic from a referrer.",
+          "aliases": [
+            "traffic-source"
+          ],
+          "parameterHint": "Source: referrer. Required: internal=example.com ; Optional: search=google.com,bing.com ; social=x.com"
+        }
+      ]
+    },
+    {
+      "id": "network.columns",
+      "version": "1.0.0",
+      "displayName": "Network",
+      "description": "Inspect IP addresses, networks and ports and resolve hostnames.",
+      "kind": "virtualColumnProvider",
+      "apiVersion": 1,
+      "capabilities": [
+        "ProvideVirtualColumns",
+        "UsesNetwork"
+      ],
+      "virtualColumns": [
+        {
+          "id": "hostname",
+          "displayName": "hostname",
+          "description": "Network | Resolve an IP address to a hostname using reverse DNS.",
+          "aliases": [
+            "hostname",
+            "host",
+            "rdns"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "ip-private",
+          "displayName": "ip-private",
+          "description": "Network | Identify private IP addresses.",
+          "aliases": [
+            "ip-private"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "ip-version",
+          "displayName": "ip-version",
+          "description": "Network | IPv4 or IPv6.",
+          "aliases": [
+            "ip-version"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "port-service",
+          "displayName": "port-service",
+          "description": "Network | Common service for a port number.",
+          "aliases": [
+            "port-service"
+          ],
+          "parameterHint": "No extra parameters required."
+        },
+        {
+          "id": "cidr",
+          "displayName": "cidr",
+          "description": "Network | Group IP addresses by a network prefix.",
+          "aliases": [
+            "cidr"
+          ],
+          "parameterHint": "Required: prefix=24"
+        }
       ]
     }
   ]

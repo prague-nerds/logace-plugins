@@ -1,0 +1,20 @@
+{
+  "lockVersion": 2,
+  "packages": [
+    {
+      "id": "UaDetector",
+      "version": "5.1.0",
+      "sha512": "gR8M0zTki+VVSE9kyFto7Z4+PnKIWTi0PmroURWOp6aouo9qJbKcrNDbVyo+Oy6zhojRChQ5TEYQ95SqpbSIJQ=="
+    },
+    {
+      "id": "UaDetector.Abstractions",
+      "version": "5.1.0",
+      "sha512": "nNfPDzNdHF9/Nt+M1YjXofuadBkxcnfaWJh7XiNpRboM3FeUb8aB535LTFVqIwr+Tr+RhuccGuIkSm7HXw4zvA=="
+    },
+    {
+      "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "version": "10.0.8",
+      "sha512": "a261jepcLh5Odkv/KzR7qEHDsfNGZc161KVjAeElzLGAlq4jlyDyCB/3xtPCiHTgwt/2NVDwPc5wxvNp2WAxmA=="
+    }
+  ]
+}

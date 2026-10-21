@@ -1,0 +1,104 @@
+{
+  "id": "user-agent.columns",
+  "version": "1.0.0",
+  "displayName": "User-Agent",
+  "description": "Identify browsers, operating systems, devices and bots from User-Agent strings.",
+  "kind": "virtualColumnProvider",
+  "entryPoint": "LogAce.Columns.user_agent.ColumnsPlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "manifestVersion": 1,
+  "capabilities": [
+    "ProvideVirtualColumns",
+    "UsesNetwork",
+    "ReadsLocalFiles",
+    "WritesLocalFiles"
+  ],
+  "packages": [
+    "UaDetector@5.1.0"
+  ],
+  "sources": [
+    "BotDatabaseStore.cs",
+    "BotDatabases.cs",
+    "BotUserAgentDatabase.cs",
+    "BotUserAgentMatch.cs",
+    "ColumnAppearance.cs",
+    "ColumnDataPaths.cs",
+    "ColumnKind.cs",
+    "GlobalUsings.cs",
+    "VirtualColumnRuntime.cs",
+    "plugin.cs"
+  ],
+  "virtualColumns": [
+    {
+      "id": "ua-bot",
+      "displayName": "ua-bot",
+      "description": "Bots | Detect a bot from its User-Agent (yes/no).",
+      "aliases": [
+        "ua-bot",
+        "bot"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "ua-bot-name",
+      "displayName": "ua-bot-name",
+      "description": "Bots | Bot name from its User-Agent.",
+      "aliases": [
+        "ua-bot-name",
+        "bot-name"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "ua-bot-category",
+      "displayName": "ua-bot-category",
+      "description": "Bots | Bot category from its User-Agent.",
+      "aliases": [
+        "ua-bot-category",
+        "bot-category"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "ua-browser",
+      "displayName": "ua-browser",
+      "description": "User agent | Browser name.",
+      "aliases": [
+        "ua-browser",
+        "browser"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "ua-browser-version",
+      "displayName": "ua-browser-version",
+      "description": "User agent | Browser version.",
+      "aliases": [
+        "ua-browser-version",
+        "browser-version"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "ua-os",
+      "displayName": "ua-os",
+      "description": "User agent | Operating system.",
+      "aliases": [
+        "ua-os",
+        "os"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "ua-device",
+      "displayName": "ua-device",
+      "description": "User agent | Device type or name.",
+      "aliases": [
+        "ua-device",
+        "device"
+      ],
+      "parameterHint": "No extra parameters required."
+    }
+  ]
+}

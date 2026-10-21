@@ -4,7 +4,7 @@ The official plugin catalog for LogAce is the public repository **prague-nerds/l
 
 Plugins are reviewable C# source with a separate `plugin.json` manifest. LogAce fetches one Git commit, presents the manifest, source and any pinned NuGet dependencies for approval, then compiles locally. A single hash of the approved snapshot is stored locally; no source hashes are maintained in this repository. Third-party code runs with your user privileges. This is not a sandbox.
 
-`index.json` is schema version 4 and requires a LogAce host supporting separate plugin manifests. Packages are grouped under `plugins/sources/`, `plugins/parsers/` and `plugins/virtual-columns/`; `docker.source` and `kubectl.source` provide optional Docker and Kubernetes snapshots and live streams; `example.snapshot-source` opens entered text as a temporary log for learning the API. Each package has `plugin.cs`, `plugin.json` and helper files explicitly listed in the manifest. A NuGet-only `plugin.lock.json` is needed only for dependency packages; the current plugins use none. Source entries include `presentation.category` and `presentation.keywords` matching their runtime `PluginSourcePresentation`, so Open can group and search them before installation. Hosts must support catalog version 4; updated hosts also accept version 2 and 3 indexes and caches. Index entries contain no external URLs or links to other source repositories.
+`index.json` is schema version 5 and requires a LogAce host supporting separate plugin manifests. Packages are grouped under `plugins/sources/`, `plugins/parsers/` and `plugins/virtual-columns/`; `docker.source` and `kubectl.source` provide optional Docker and Kubernetes snapshots and live streams; `example.snapshot-source` opens entered text as a temporary log for learning the API. Each package has `plugin.cs`, `plugin.json` and helper files explicitly listed in the manifest. A NuGet-only `plugin.lock.json` is needed only for dependency packages; GeoIP and User-Agent include pinned direct and transitive dependencies. Source entries include `presentation.category` and `presentation.keywords` matching their runtime `PluginSourcePresentation`, so Open can group and search them before installation. Hosts must support catalog version 5; updated hosts also accept version 2, 3 and 4 indexes and caches. Virtual-column entries declare `virtualColumns` with stable IDs, aliases, descriptions and parameter hints so they can be found before installation. Index entries contain no external URLs or links to other source repositories.
 
 ## Available plugins
 
@@ -52,7 +52,17 @@ These plugins retain the existing profile IDs, so saved sessions, column layouts
 
 ### Virtual columns (`virtualColumnProvider`)
 
-Virtual-column plugins add derived columns, transformations and enrichment. No standalone plugins of this type are currently published in this catalog; the [reserved directory](plugins/virtual-columns/README.md) documents their layout.
+Install from **Columns → Add virtual / Type → Install & Use**, the Ad Hoc type picker, or **Tools → Plugins**. One package provides a related family of types. Saved sessions and profiles retain their IDs, aliases, parameters and column dependencies; LogAce offers to install or enable missing providers before use.
+
+| Plugin | Provided types |
+| --- | --- |
+| [GeoIP](plugins/virtual-columns/geoip/README.md) | `geoip`, `geoip-country`, `geoip-region`, `geoip-city`, `geoip-asn`, `geoip-org` |
+| [User-Agent](plugins/virtual-columns/user-agent/README.md) | `ua-bot`, `ua-bot-name`, `ua-bot-category`, `ua-browser`, `ua-browser-version`, `ua-os`, `ua-device` |
+| [Bots & IP](plugins/virtual-columns/bots-ip/README.md) | `bot-ip-name`, `bot-verification`, `ip-datacenter` |
+| [HTTP & URL](plugins/virtual-columns/http/README.md) | `http-status-class`, `url-host`, `url-path`, `url-query`, `url-extension`, `referrer-host`, `query-param`, `header`, `url-route`, `resource-type`, `traffic-source` |
+| [Network](plugins/virtual-columns/network/README.md) | `hostname`, `ip-private`, `ip-version`, `port-service`, `cidr` |
+
+The app retains 14 generic types: `regex-group`, `json-path`, `email-domain`, `exception-type`, `log-level-normalized`, `coalesce`, `concat`, `expression`, `lookup`, `timestamp-floor`, `timestamp-part`, `duration-bucket`, `bytes-human`, and `bytes-bucket`.
 
 ## Package layout
 
@@ -65,12 +75,14 @@ plugins/
   parsers/
     docker/                  ID: docker
     apache/                  ID: apache
-  virtual-columns/           reserved for virtualColumnProvider packages
+  virtual-columns/
+    geoip/                   ID: geoip.columns
+    http/                    ID: http.columns
 ```
 
 The plugin ID in `plugin.json` is stable and independent of its directory name. Kinds map to `sources`, `parsers` and `virtual-columns`. Conventional `.source`, `.parser` and `.columns` suffixes are omitted from directory names; other IDs are used unchanged. For example, `docker.source` lives in `plugins/sources/docker` while the `docker` parser lives in `plugins/parsers/docker`.
 
-Catalog schema v4 and plugin manifests are unchanged by this move. The updated host reads both grouped packages and the legacy `plugins/<id>/` layout, including catalog versions 2 and 3 and pinned cached commits. Only a missing manifest (HTTP 404) triggers a layout fallback; invalid metadata, missing source files, network failures and cancellation never mix files from different directories. Every package is reviewed and downloaded from one directory in one commit.
+Grouped paths were introduced with catalog v4. Catalog v5 adds virtual-column discovery metadata to matching index entries and manifests. The updated host reads both grouped packages and the legacy `plugins/<id>/` layout, including catalog versions 2, 3 and 4 and pinned cached commits. Only a missing manifest (HTTP 404) triggers a layout fallback; invalid metadata, missing source files, network failures and cancellation never mix files from different directories. Every package is reviewed and downloaded from one directory in one commit.
 
 Old local `plugins inspect`, `install`, `update` and `dev` paths also continue to work with the updated host: `plugins/docker.source` resolves to `plugins/sources/docker` after the move. Grouped paths also resolve against older flat checkouts. Resolution verifies the manifest ID and kind and never overrides an existing manifest. Installed artifacts, approved snapshots, sessions, settings and credentials remain keyed by the existing plugin ID; they are not moved or renamed. Hosts without grouped-layout support must update before downloading from the reorganized repository.
 

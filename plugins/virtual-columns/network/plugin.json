@@ -1,0 +1,72 @@
+{
+  "id": "network.columns",
+  "version": "1.0.0",
+  "displayName": "Network",
+  "description": "Inspect IP addresses, networks and ports and resolve hostnames.",
+  "kind": "virtualColumnProvider",
+  "entryPoint": "LogAce.Columns.network.ColumnsPlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "manifestVersion": 1,
+  "capabilities": [
+    "ProvideVirtualColumns",
+    "UsesNetwork"
+  ],
+  "packages": [],
+  "sources": [
+    "ColumnAppearance.cs",
+    "ColumnKind.cs",
+    "GlobalUsings.cs",
+    "VirtualColumnRuntime.cs",
+    "plugin.cs"
+  ],
+  "virtualColumns": [
+    {
+      "id": "hostname",
+      "displayName": "hostname",
+      "description": "Network | Resolve an IP address to a hostname using reverse DNS.",
+      "aliases": [
+        "hostname",
+        "host",
+        "rdns"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "ip-private",
+      "displayName": "ip-private",
+      "description": "Network | Identify private IP addresses.",
+      "aliases": [
+        "ip-private"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "ip-version",
+      "displayName": "ip-version",
+      "description": "Network | IPv4 or IPv6.",
+      "aliases": [
+        "ip-version"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "port-service",
+      "displayName": "port-service",
+      "description": "Network | Common service for a port number.",
+      "aliases": [
+        "port-service"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "cidr",
+      "displayName": "cidr",
+      "description": "Network | Group IP addresses by a network prefix.",
+      "aliases": [
+        "cidr"
+      ],
+      "parameterHint": "Required: prefix=24"
+    }
+  ]
+}

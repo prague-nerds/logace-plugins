@@ -1,0 +1,90 @@
+{
+  "id": "geoip.columns",
+  "version": "1.0.0",
+  "displayName": "GeoIP",
+  "description": "Enrich IP addresses with location, ASN and organization.",
+  "kind": "virtualColumnProvider",
+  "entryPoint": "LogAce.Columns.geoip.ColumnsPlugin",
+  "apiVersion": 1,
+  "targetFramework": "net10.0",
+  "manifestVersion": 1,
+  "capabilities": [
+    "ProvideVirtualColumns",
+    "UsesNetwork",
+    "ReadsLocalFiles"
+  ],
+  "packages": [
+    "MaxMind.GeoIP2@6.0.0"
+  ],
+  "sources": [
+    "ColumnAppearance.cs",
+    "ColumnDataPaths.cs",
+    "ColumnKind.cs",
+    "GlobalUsings.cs",
+    "VirtualColumnRuntime.cs",
+    "plugin.cs"
+  ],
+  "virtualColumns": [
+    {
+      "id": "geoip",
+      "displayName": "geoip",
+      "description": "Network | Country, region and city for an IP address.",
+      "aliases": [
+        "geoip",
+        "geo"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "geoip-country",
+      "displayName": "geoip-country",
+      "description": "Network | Country for an IP address.",
+      "aliases": [
+        "geoip-country",
+        "country"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "geoip-region",
+      "displayName": "geoip-region",
+      "description": "Network | Region for an IP address.",
+      "aliases": [
+        "geoip-region",
+        "region"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "geoip-city",
+      "displayName": "geoip-city",
+      "description": "Network | City for an IP address.",
+      "aliases": [
+        "geoip-city",
+        "city"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "geoip-asn",
+      "displayName": "geoip-asn",
+      "description": "Network | Autonomous system number for an IP address.",
+      "aliases": [
+        "geoip-asn",
+        "asn"
+      ],
+      "parameterHint": "No extra parameters required."
+    },
+    {
+      "id": "geoip-org",
+      "displayName": "geoip-org",
+      "description": "Network | Network organization for an IP address.",
+      "aliases": [
+        "geoip-org",
+        "org",
+        "organization"
+      ],
+      "parameterHint": "No extra parameters required."
+    }
+  ]
+}
