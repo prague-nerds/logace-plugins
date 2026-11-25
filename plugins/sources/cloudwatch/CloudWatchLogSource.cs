@@ -151,7 +151,10 @@ internal sealed class CloudWatchFollowSession : IDisposable
                             // failures time to surface without waiting for its first log.
                             await Task.WhenAny(drain, Task.Delay(250, token)).ConfigureAwait(false);
                             token.ThrowIfCancellationRequested();
-                            if (drain.IsCompleted)
+                            // Pipe-reader continuations can lag behind process
+                            // exit under CPU load. Do not announce a successful
+                            // startup while an already-failed CLI is still being drained.
+                            if (drain.IsCompleted || process.HasExited)
                             {
                                 await drain.ConfigureAwait(false);
                                 if (process.ExitCode != 0) throw new IOException(sink.Error("Could not start CloudWatch log follow."));

@@ -2,7 +2,7 @@ using LogAce.PluginApi;
 namespace LogAce.Columns.network;
 public sealed class ColumnsPlugin : ILogAceVirtualColumnProviderPlugin, ILogAceVirtualColumnEditor
 {
-    public PluginMetadata Metadata { get; } = new("network.columns", "Network", "Inspect IP addresses, networks and ports and resolve hostnames.", PluginKind.VirtualColumnProvider, Capabilities: ["ProvideVirtualColumns", "UsesNetwork"]);
+    public PluginMetadata Metadata { get; } = new("network.columns", "Network", "Inspect IP addresses, networks and ports and resolve hostnames.", PluginKind.VirtualColumnProvider, Version: "1.0.1", Capabilities: ["ProvideVirtualColumns", "UsesNetwork"]);
     public IReadOnlyList<VirtualColumnDefinition> Columns { get; } = [
         new("hostname", "hostname", "Network | Resolve an IP address to a hostname using reverse DNS.", ["hostname", "host", "rdns"], "No extra parameters required."),
         new("ip-private", "ip-private", "Network | Identify private IP addresses.", ["ip-private"], "No extra parameters required."),

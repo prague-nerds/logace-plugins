@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "logcat.source",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "Android device (logcat)",
   "description": "Android logcat snapshots and live streams through adb.",
   "kind": "source",
@@ -42,5 +42,6 @@
   },
   "requiredParsers": [
     "logcat"
-  ]
+  ],
+  "minAppVersion": "2026.11.1"
 }

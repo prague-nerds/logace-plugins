@@ -19,7 +19,7 @@ public sealed class GcpSourcePlugin : ILogAceSourcePlugin
     {
         get;
     } = new("gcloud.source", "GCP Cloud Logging", "Cloud Logging snapshots and live streams through gcloud.", PluginKind.Source,
-        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
+        Version: "1.0.2", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
 
     /// <summary>Source-picker category and search aliases.</summary>
     public PluginSourcePresentation Presentation { get; } = new("Cloud", ["google", "gcp", "gcloud", "logging", "snapshot", "follow"]);

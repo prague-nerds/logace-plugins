@@ -19,7 +19,7 @@ public sealed class SimctlSourcePlugin : ILogAceSourcePlugin
     {
         get;
     } = new("simctl.source", "iOS simulator", "Unified log snapshots from booted iOS simulators through xcrun simctl.", PluginKind.Source,
-        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "ReadsLocalFiles", "WritesLocalFiles"]);
+        Version: "1.0.2", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "ReadsLocalFiles", "WritesLocalFiles"]);
 
     /// <summary>Source-picker category and search aliases.</summary>
     public PluginSourcePresentation Presentation { get; } = new("Devices & system", ["apple", "ios", "iphone", "xcode", "simctl", "simulator"]);

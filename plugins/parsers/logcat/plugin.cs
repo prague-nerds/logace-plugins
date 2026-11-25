@@ -6,7 +6,7 @@ using LogAce.PluginApi;
 /// <summary>Standalone Logcat format; retains the historic profile ID for saved sessions.</summary>
 public sealed class LogcatParserPlugin : ILogAceParserPlugin
 {
-    public PluginMetadata Metadata { get; } = new("logcat", "Logcat", "Android logcat in threadtime format, including multiline messages.", PluginKind.Parser, Capabilities: ["ParseCustomText"]);
+    public PluginMetadata Metadata { get; } = new("logcat", "Logcat", "Android logcat in threadtime format, including multiline messages.", PluginKind.Parser, Version: "1.0.1", Capabilities: ["ParseCustomText"]);
     public ParserDetectionHints DetectionHints => ParserDetectionHints.None;
     public int Probe(ParserDetectionContext context, CancellationToken cancellationToken = default)
     {

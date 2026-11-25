@@ -6,7 +6,7 @@ using LogAce.PluginApi;
 /// <summary>Standalone Merged format; retains the historic profile ID for saved sessions.</summary>
 public sealed class MergedParserPlugin : ILogAceParserPlugin
 {
-    public PluginMetadata Metadata { get; } = new("merged", "Merged", "Tabs combined into a timeline, sorted by UTC timestamp.", PluginKind.Parser, Capabilities: ["ParseCustomText"]);
+    public PluginMetadata Metadata { get; } = new("merged", "Merged", "Tabs combined into a timeline, sorted by UTC timestamp.", PluginKind.Parser, Version: "1.0.1", Capabilities: ["ParseCustomText"]);
     public ParserDetectionHints DetectionHints => ParserDetectionHints.None;
     public int Probe(ParserDetectionContext context, CancellationToken cancellationToken = default)
     {

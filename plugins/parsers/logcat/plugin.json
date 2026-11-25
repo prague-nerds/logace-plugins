@@ -1,6 +1,6 @@
 {
   "id": "logcat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Logcat",
   "description": "Android logcat in threadtime format, including multiline messages.",
   "kind": "parser",
@@ -15,5 +15,6 @@
     "LogcatRecordProvider.cs"
   ],
   "manifestVersion": 1,
-  "targetFramework": "net10.0"
+  "targetFramework": "net10.0",
+  "minAppVersion": "2026.11.1"
 }

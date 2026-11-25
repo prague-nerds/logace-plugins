@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "otel.source",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "OpenTelemetry logs",
   "description": "Receive OpenTelemetry logs over OTLP/HTTP as JSON or protobuf.",
   "kind": "source",
@@ -31,5 +31,6 @@
   },
   "requiredParsers": [
     "otel-logs"
-  ]
+  ],
+  "minAppVersion": "2026.11.1"
 }

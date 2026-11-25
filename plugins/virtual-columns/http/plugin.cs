@@ -2,7 +2,7 @@ using LogAce.PluginApi;
 namespace LogAce.Columns.http;
 public sealed class ColumnsPlugin : ILogAceVirtualColumnProviderPlugin, ILogAceVirtualColumnEditor
 {
-    public PluginMetadata Metadata { get; } = new("http.columns", "HTTP & URL", "Extract and classify HTTP requests, URLs, headers and traffic.", PluginKind.VirtualColumnProvider, Capabilities: ["ProvideVirtualColumns"]);
+    public PluginMetadata Metadata { get; } = new("http.columns", "HTTP & URL", "Extract and classify HTTP requests, URLs, headers and traffic.", PluginKind.VirtualColumnProvider, Version: "1.0.1", Capabilities: ["ProvideVirtualColumns"]);
     public IReadOnlyList<VirtualColumnDefinition> Columns { get; } = [
         new("http-status-class", "http-status-class", "HTTP | Group status codes into 2xx, 3xx, 4xx and 5xx.", ["http-status-class", "status-class"], "No extra parameters required."),
         new("url-host", "url-host", "HTTP | Host from a URL.", ["url-host"], "No extra parameters required."),

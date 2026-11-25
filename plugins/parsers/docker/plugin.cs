@@ -6,7 +6,7 @@ using LogAce.PluginApi;
 /// <summary>Standalone Docker format; retains the historic profile ID for saved sessions.</summary>
 public sealed class DockerParserPlugin : ILogAceParserPlugin
 {
-    public PluginMetadata Metadata { get; } = new("docker", "Docker", "Docker logs with timestamps.", PluginKind.Parser, Capabilities: ["ParseCustomText"]);
+    public PluginMetadata Metadata { get; } = new("docker", "Docker", "Docker logs with timestamps.", PluginKind.Parser, Version: "1.0.1", Capabilities: ["ParseCustomText"]);
     public ParserDetectionHints DetectionHints => ParserDetectionHints.None;
     public int Probe(ParserDetectionContext context, CancellationToken cancellationToken = default)
     {

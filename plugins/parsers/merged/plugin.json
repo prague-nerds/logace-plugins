@@ -1,6 +1,6 @@
 {
   "id": "merged",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Merged",
   "description": "Tabs combined into a timeline, sorted by UTC timestamp.",
   "kind": "parser",
@@ -15,5 +15,6 @@
     "MergedRecordProvider.cs"
   ],
   "manifestVersion": 1,
-  "targetFramework": "net10.0"
+  "targetFramework": "net10.0",
+  "minAppVersion": "2026.11.1"
 }

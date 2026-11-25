@@ -1,6 +1,6 @@
 {
   "id": "http.columns",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "HTTP & URL",
   "description": "Extract and classify HTTP requests, URLs, headers and traffic.",
   "kind": "virtualColumnProvider",
@@ -122,5 +122,6 @@
       ],
       "parameterHint": "Source: referrer. Required: internal=example.com ; Optional: search=google.com,bing.com ; social=x.com"
     }
-  ]
+  ],
+  "minAppVersion": "2026.11.1"
 }

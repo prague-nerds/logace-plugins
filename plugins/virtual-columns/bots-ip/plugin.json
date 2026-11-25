@@ -1,6 +1,6 @@
 {
   "id": "bots-ip.columns",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Bots & IP",
   "description": "Identify crawlers and datacenters and verify crawler identity using downloaded IP ranges.",
   "kind": "virtualColumnProvider",
@@ -55,5 +55,6 @@
       ],
       "parameterHint": "No extra parameters required."
     }
-  ]
+  ],
+  "minAppVersion": "2026.11.1"
 }

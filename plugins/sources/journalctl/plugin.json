@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "journalctl.source",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "Journalctl service",
   "description": "Local systemd journal snapshots and live streams through journalctl.",
   "kind": "source",
@@ -35,5 +35,6 @@
   },
   "requiredParsers": [
     "journalctl"
-  ]
+  ],
+  "minAppVersion": "2026.11.1"
 }

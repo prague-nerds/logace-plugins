@@ -1,6 +1,6 @@
 {
   "id": "otel-logs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "OTel Logs",
   "description": "OTLP logs with resource, scope, trace, span and message fields.",
   "kind": "parser",
@@ -15,5 +15,6 @@
     "OtelLogRecordProvider.cs"
   ],
   "manifestVersion": 1,
-  "targetFramework": "net10.0"
+  "targetFramework": "net10.0",
+  "minAppVersion": "2026.11.1"
 }

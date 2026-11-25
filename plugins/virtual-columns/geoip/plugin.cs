@@ -2,7 +2,7 @@ using LogAce.PluginApi;
 namespace LogAce.Columns.geoip;
 public sealed class ColumnsPlugin : ILogAceVirtualColumnProviderPlugin, ILogAceVirtualColumnEditor, ILogAcePluginWithHostServices, ILogAcePluginSettingsConsumer, IDisposable
 {
-    public PluginMetadata Metadata { get; } = new("geoip.columns", "GeoIP", "Enrich IP addresses with location, ASN and organization.", PluginKind.VirtualColumnProvider, Capabilities: ["ProvideVirtualColumns", "UsesNetwork", "ReadsLocalFiles"]);
+    public PluginMetadata Metadata { get; } = new("geoip.columns", "GeoIP", "Enrich IP addresses with location, ASN and organization.", PluginKind.VirtualColumnProvider, Version: "1.0.1", Capabilities: ["ProvideVirtualColumns", "UsesNetwork", "ReadsLocalFiles"]);
     public IReadOnlyList<VirtualColumnDefinition> Columns { get; } = [
         new("geoip", "geoip", "Network | Country, region and city for an IP address.", ["geoip", "geo"], "No extra parameters required."),
         new("geoip-country", "geoip-country", "Network | Country for an IP address.", ["geoip-country", "country"], "No extra parameters required."),

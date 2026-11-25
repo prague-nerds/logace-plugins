@@ -6,7 +6,7 @@ using LogAce.PluginApi;
 /// <summary>Standalone Syslog Sink format; retains the historic profile ID for saved sessions.</summary>
 public sealed class SyslogSinkParserPlugin : ILogAceParserPlugin
 {
-    public PluginMetadata Metadata { get; } = new("syslog-sink", "Syslog Sink", "Received syslog messages with sender, transport and severity fields.", PluginKind.Parser, Capabilities: ["ParseCustomText"]);
+    public PluginMetadata Metadata { get; } = new("syslog-sink", "Syslog Sink", "Received syslog messages with sender, transport and severity fields.", PluginKind.Parser, Version: "1.0.1", Capabilities: ["ParseCustomText"]);
     public ParserDetectionHints DetectionHints => ParserDetectionHints.None;
     public int Probe(ParserDetectionContext context, CancellationToken cancellationToken = default)
     {

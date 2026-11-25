@@ -6,7 +6,7 @@ using LogAce.PluginApi;
 /// <summary>Standalone Apache / W3C Combined format; retains the historic profile ID for saved sessions.</summary>
 public sealed class ApacheParserPlugin : ILogAceParserPlugin
 {
-    public PluginMetadata Metadata { get; } = new("apache", "Apache / W3C Combined", "Apache combined access logs.", PluginKind.Parser, Capabilities: ["ParseCustomText"]);
+    public PluginMetadata Metadata { get; } = new("apache", "Apache / W3C Combined", "Apache combined access logs.", PluginKind.Parser, Version: "1.0.1", Capabilities: ["ParseCustomText"]);
     public ParserDetectionHints DetectionHints => ParserDetectionHints.None;
     public int Probe(ParserDetectionContext context, CancellationToken cancellationToken = default)
     {
