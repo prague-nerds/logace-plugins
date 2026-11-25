@@ -2,7 +2,7 @@ using LogAce.PluginApi;
 namespace LogAce.Columns.user_agent;
 public sealed class ColumnsPlugin : ILogAceVirtualColumnProviderPlugin, ILogAceVirtualColumnEditor, ILogAcePluginWithHostServices, ILogAcePluginDataResources
 {
-    public PluginMetadata Metadata { get; } = new("user-agent.columns", "User-Agent", "Identify browsers, operating systems, devices and bots from User-Agent strings.", PluginKind.VirtualColumnProvider, Capabilities: ["ProvideVirtualColumns", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
+    public PluginMetadata Metadata { get; } = new("user-agent.columns", "User-Agent", "Identify browsers, operating systems, devices and bots from User-Agent strings.", PluginKind.VirtualColumnProvider, Version: "1.0.1", Capabilities: ["ProvideVirtualColumns", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
     public IReadOnlyList<VirtualColumnDefinition> Columns { get; } = [
         new("ua-bot", "ua-bot", "Bots | Detect a bot from its User-Agent (yes/no).", ["ua-bot", "bot"], "No extra parameters required."),
         new("ua-bot-name", "ua-bot-name", "Bots | Bot name from its User-Agent.", ["ua-bot-name", "bot-name"], "No extra parameters required."),

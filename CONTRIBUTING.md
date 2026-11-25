@@ -7,7 +7,7 @@ Submit a pull request to **prague-nerds/logace-plugins**, LogAce's sole public p
 3. List every compiled C# file as a relative path in the manifest's `sources` array. Source hashes are not stored in the repository. If there are NuGet dependencies, list direct `PackageId@version` references in the manifest's `packages` array and add `plugin.lock.json` with `lockVersion: 2` and all direct/transitive package IDs, exact versions and nupkg SHA-512 hashes. Omit the lock when `packages` is empty. Portable managed dependencies are supported; opaque DLLs, native/RID assets, build scripts and generated outputs are unsupported.
 4. For source UI, declare `ui.modes` in the manifest: `declarativeForm` and/or `terminalGuiDialog`. Native dialogs require the exact UI API and host fingerprint from `LogAce --plugin-host-info` in both manifest and index.
 5. For your working copy, run `LogAce plugins dev <folder>` to build into `.local/plugins`, then `LogAce --plugin-dir .local/plugins`. Dev refreshes only the native UI binding in the manifest when necessary; source edits need no checksum update. Package pins and API/identity fields remain explicit. Alternatively use `plugins inspect`, then `plugins install/update --approve <reviewHash>` with an explicit development `--plugin-dir`. Test parser/source UI/session/column integration as applicable. Keep compiled artifacts and local activation state out of the PR.
-6. Add a matching schema-version-5 `index.json` entry with ID, version, display name, description, canonical kind, API, capabilities and optional UI metadata. For source plugins, include `presentation.category` and `presentation.keywords` matching the runtime `PluginSourcePresentation`; these index-only fields allow discovery before installation. No source, manifest or lock hashes belong in the index. Paths are implicit from kind and ID using the grouped layout described below; legacy `plugins/<id>/` packages remain readable by the updated host. Alternate URLs and Git references are unsupported.
+6. Add a matching schema-version-6 `index.json` entry with ID, version, display name, description, canonical kind, API, capabilities and optional UI metadata. For source plugins, include `presentation.category` and `presentation.keywords` matching the runtime `PluginSourcePresentation`; these index-only fields allow discovery before installation. No source, manifest or lock hashes belong in the index. Paths are implicit from kind and ID using the grouped layout described below; legacy `plugins/<id>/` packages remain readable by the updated host. Alternate URLs and Git references are unsupported.
 7. Bump the version for published changes, in the manifest, runtime metadata and index. Updates are offered by version. Summarize source, capability and dependency changes in the PR. Preserve stable IDs and migrate saved source configuration where needed.
 
 LogAce fetches the index, manifest, optional NuGet lock and sources from one Git commit. Approval binds the exact captured files; successful installation stores one locally computed SHA-256 for the whole snapshot. This hash includes the raw manifest, optional lock, source paths and bytes. It detects changes before automatic recompilation, without requiring per-file checksums in this repository. Third-party code runs with the user's privileges.
@@ -26,6 +26,7 @@ A plugin without NuGet dependencies needs only a manifest and its listed C# file
   "kind": "source",
   "entryPoint": "Example.SourcePlugin",
   "apiVersion": 1,
+  "minAppVersion": "2026.11.1",
   "targetFramework": "net10.0",
   "sources": ["plugin.cs", "helpers/Extra.cs"],
   "capabilities": ["UsesNetwork"],
@@ -83,3 +84,13 @@ Declare `virtualColumns` in both the manifest and schema-v5 catalog entry: an ar
 Implement optional `ILogAceVirtualColumnEditor` for category, source-count constraints and named parameter fields. `ILogAcePluginWithHostServices` supplies plugin-scoped settings and a `DataDirectory`; `LegacyDataDirectory` is for reading existing application data during migration. `ILogAcePluginDataResources` exposes dataset status, cancellable updates and cache invalidation in Settings. Keep dataset formats and update logic in the package, validate downloads before replacing a usable snapshot, and release readers in an `IDisposable` entry point. GeoIP also consumes the host's preserved path settings via `ILogAcePluginSettingsConsumer`.
 
 GeoIP and User-Agent use locked portable NuGet dependencies. The lock includes all transitives and exact archive SHA-512 values. Framework-assembly declarations applying only to incompatible .NET Framework targets are ignored; compatible/unscoped legacy declarations, native and RID packages remain unsupported.
+
+## Application compatibility
+
+Set `minAppVersion` in both the manifest and schema-6 index entry to the oldest
+LogAce release tested with the plugin and its pinned dependencies (currently
+`2026.11.1`). This is separate from `apiVersion` and the native UI fingerprint.
+Aggressive app builds retain framework/UI implementations used by the supported
+catalog. If an update needs APIs removed by an older build, release and verify a
+new app with that plugin as a trimming input, then raise `minAppVersion` to the
+new release. Do not lower it solely because source compilation succeeds.

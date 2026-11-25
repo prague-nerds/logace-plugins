@@ -1,6 +1,6 @@
 {
   "id": "syslog-sink",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Syslog Sink",
   "description": "Received syslog messages with sender, transport and severity fields.",
   "kind": "parser",
@@ -17,5 +17,6 @@
     "SyslogParsedMessage.cs"
   ],
   "manifestVersion": 1,
-  "targetFramework": "net10.0"
+  "targetFramework": "net10.0",
+  "minAppVersion": "2026.11.1"
 }

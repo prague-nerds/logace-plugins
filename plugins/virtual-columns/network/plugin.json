@@ -1,6 +1,6 @@
 {
   "id": "network.columns",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Network",
   "description": "Inspect IP addresses, networks and ports and resolve hostnames.",
   "kind": "virtualColumnProvider",
@@ -68,5 +68,6 @@
       ],
       "parameterHint": "Required: prefix=24"
     }
-  ]
+  ],
+  "minAppVersion": "2026.11.1"
 }

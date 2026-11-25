@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "syslog.source",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "Syslog sink",
   "description": "Receive syslog messages over UDP and TCP with newline or octet-counted framing.",
   "kind": "source",
@@ -32,5 +32,6 @@
   },
   "requiredParsers": [
     "syslog-sink"
-  ]
+  ],
+  "minAppVersion": "2026.11.1"
 }

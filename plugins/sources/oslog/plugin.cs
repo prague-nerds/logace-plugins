@@ -19,7 +19,7 @@ public sealed class OsLogSourcePlugin : ILogAceSourcePlugin
     {
         get;
     } = new("oslog.source", "macOS unified log", "Host macOS unified log snapshots and live streams through the log command.", PluginKind.Source,
-        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "ReadsLocalFiles", "WritesLocalFiles"]);
+        Version: "1.0.2", Capabilities: ["ProvideSourceConfigurationUi", "RunsProcesses", "ReadsLocalFiles", "WritesLocalFiles"]);
 
     /// <summary>Source-picker category and search aliases.</summary>
     public PluginSourcePresentation Presentation { get; } = new("Devices & system", ["apple", "mac", "macos", "oslog", "unified"]);

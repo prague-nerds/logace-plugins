@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "docker.source",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "Docker container",
   "description": "Docker container log snapshots and live streams through the Docker CLI.",
   "kind": "source",
@@ -29,5 +29,6 @@
   },
   "requiredParsers": [
     "docker"
-  ]
+  ],
+  "minAppVersion": "2026.11.1"
 }

@@ -6,7 +6,7 @@ using LogAce.PluginApi;
 /// <summary>Standalone IIS / W3C Extended format; retains the historic profile ID for saved sessions.</summary>
 public sealed class IisParserPlugin : ILogAceParserPlugin
 {
-    public PluginMetadata Metadata { get; } = new("iis", "IIS / W3C Extended", "IIS W3C Extended logs. Columns follow the #Fields: header.", PluginKind.Parser, Capabilities: ["ParseCustomText"]);
+    public PluginMetadata Metadata { get; } = new("iis", "IIS / W3C Extended", "IIS W3C Extended logs. Columns follow the #Fields: header.", PluginKind.Parser, Version: "1.0.1", Capabilities: ["ParseCustomText"]);
     public ParserDetectionHints DetectionHints => ParserDetectionHints.None;
     public int Probe(ParserDetectionContext context, CancellationToken cancellationToken = default)
     {

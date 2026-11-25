@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "cloudwatch.source",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "AWS CloudWatch Logs",
   "description": "CloudWatch log group snapshots and live streams through AWS CLI v2.",
   "kind": "source",
@@ -31,5 +31,6 @@
   },
   "requiredParsers": [
     "cloudwatch"
-  ]
+  ],
+  "minAppVersion": "2026.11.1"
 }

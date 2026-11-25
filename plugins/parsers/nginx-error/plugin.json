@@ -1,6 +1,6 @@
 {
   "id": "nginx-error",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "NGINX Error",
   "description": "NGINX error logs, including multiline messages.",
   "kind": "parser",
@@ -15,5 +15,6 @@
     "NginxErrorRecordProvider.cs"
   ],
   "manifestVersion": 1,
-  "targetFramework": "net10.0"
+  "targetFramework": "net10.0",
+  "minAppVersion": "2026.11.1"
 }

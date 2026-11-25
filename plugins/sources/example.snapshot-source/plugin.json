@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "example.snapshot-source",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "Text snapshot",
   "description": "Open entered text as a temporary log snapshot.",
   "kind": "source",
@@ -20,5 +20,6 @@
     "modes": [
       "declarativeForm"
     ]
-  }
+  },
+  "minAppVersion": "2026.11.1"
 }

@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "simctl.source",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "iOS simulator",
   "description": "Unified log snapshots from booted iOS simulators through xcrun simctl.",
   "kind": "source",
@@ -35,5 +35,6 @@
     "modes": [
       "declarativeForm"
     ]
-  }
+  },
+  "minAppVersion": "2026.11.1"
 }

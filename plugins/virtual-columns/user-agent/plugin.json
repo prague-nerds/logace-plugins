@@ -1,6 +1,6 @@
 {
   "id": "user-agent.columns",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "User-Agent",
   "description": "Identify browsers, operating systems, devices and bots from User-Agent strings.",
   "kind": "virtualColumnProvider",
@@ -100,5 +100,6 @@
       ],
       "parameterHint": "No extra parameters required."
     }
-  ]
+  ],
+  "minAppVersion": "2026.11.1"
 }

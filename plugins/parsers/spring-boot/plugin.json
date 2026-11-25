@@ -1,6 +1,6 @@
 {
   "id": "spring-boot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Spring Boot",
   "description": "Spring Boot logs, including multiline messages.",
   "kind": "parser",
@@ -15,5 +15,6 @@
     "SpringBootRecordProvider.cs"
   ],
   "manifestVersion": 1,
-  "targetFramework": "net10.0"
+  "targetFramework": "net10.0",
+  "minAppVersion": "2026.11.1"
 }

@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "oslog.source",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "macOS unified log",
   "description": "Host macOS unified log snapshots and live streams through the log command.",
   "kind": "source",
@@ -36,5 +36,6 @@
     "modes": [
       "declarativeForm"
     ]
-  }
+  },
+  "minAppVersion": "2026.11.1"
 }

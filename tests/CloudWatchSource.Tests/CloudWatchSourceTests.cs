@@ -179,7 +179,11 @@ public sealed class CloudWatchSourceTests
     [UnixFact]
     public async Task Follow_startup_failure_reports_the_diagnostic_and_releases_the_spool()
     {
-        using var aws = new FakeAws(); aws.Write("stderr", "Cannot connect to AWS\n"); aws.Write("exit", "1");
+        using var aws = new FakeAws();
+        // This case tests immediate CLI failure within the startup grace period.
+        // Avoid dirname/cat child processes: under parallel publish stress their
+        // startup can consume that window and turn this into a reconnect test.
+        aws.Write("aws", "#!/bin/sh\nprintf '%s\\n' 'Cannot connect to AWS' >&2\nexit 1\n");
         using var host = new TempHost();
         var error = await Assert.ThrowsAsync<IOException>(async () => await new CloudWatchSourcePlugin().OpenAsync(Config("api", follow: true), new(host)));
         Assert.Contains("AWS", error.Message);

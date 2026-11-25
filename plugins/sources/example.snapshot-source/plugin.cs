@@ -12,7 +12,7 @@ public sealed class TextSnapshotPlugin : ILogAceSourcePlugin
 {
     public PluginMetadata Metadata { get; } = new("example.snapshot-source", "Text snapshot",
         "Open entered text as a temporary log snapshot.", PluginKind.Source,
-        Version: "1.0.1", Capabilities: ["ProvideSourceConfigurationUi", "ReadsLocalFiles"]);
+        Version: "1.0.2", Capabilities: ["ProvideSourceConfigurationUi", "ReadsLocalFiles"]);
 
     public PluginSourcePresentation Presentation { get; } = new("Examples", ["text", "snapshot"]);
 

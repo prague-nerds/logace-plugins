@@ -6,7 +6,7 @@ using LogAce.PluginApi;
 /// <summary>Standalone OTel Logs format; retains the historic profile ID for saved sessions.</summary>
 public sealed class OtelLogsParserPlugin : ILogAceParserPlugin
 {
-    public PluginMetadata Metadata { get; } = new("otel-logs", "OTel Logs", "OTLP logs with resource, scope, trace, span and message fields.", PluginKind.Parser, Capabilities: ["ParseCustomText"]);
+    public PluginMetadata Metadata { get; } = new("otel-logs", "OTel Logs", "OTLP logs with resource, scope, trace, span and message fields.", PluginKind.Parser, Version: "1.0.1", Capabilities: ["ParseCustomText"]);
     public ParserDetectionHints DetectionHints => ParserDetectionHints.None;
     public int Probe(ParserDetectionContext context, CancellationToken cancellationToken = default)
     {

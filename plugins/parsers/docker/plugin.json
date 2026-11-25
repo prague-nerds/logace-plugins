@@ -1,6 +1,6 @@
 {
   "id": "docker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Docker",
   "description": "Docker logs with timestamps.",
   "kind": "parser",
@@ -15,5 +15,6 @@
     "DockerRecordProvider.cs"
   ],
   "manifestVersion": 1,
-  "targetFramework": "net10.0"
+  "targetFramework": "net10.0",
+  "minAppVersion": "2026.11.1"
 }

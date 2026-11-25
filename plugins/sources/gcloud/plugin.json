@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "gcloud.source",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "GCP Cloud Logging",
   "description": "Cloud Logging snapshots and live streams through gcloud.",
   "kind": "source",
@@ -38,5 +38,6 @@
     "modes": [
       "declarativeForm"
     ]
-  }
+  },
+  "minAppVersion": "2026.11.1"
 }

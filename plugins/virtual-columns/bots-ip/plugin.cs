@@ -2,7 +2,7 @@ using LogAce.PluginApi;
 namespace LogAce.Columns.bots_ip;
 public sealed class ColumnsPlugin : ILogAceVirtualColumnProviderPlugin, ILogAceVirtualColumnEditor, ILogAcePluginWithHostServices, ILogAcePluginDataResources
 {
-    public PluginMetadata Metadata { get; } = new("bots-ip.columns", "Bots & IP", "Identify crawlers and datacenters and verify crawler identity using downloaded IP ranges.", PluginKind.VirtualColumnProvider, Capabilities: ["ProvideVirtualColumns", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
+    public PluginMetadata Metadata { get; } = new("bots-ip.columns", "Bots & IP", "Identify crawlers and datacenters and verify crawler identity using downloaded IP ranges.", PluginKind.VirtualColumnProvider, Version: "1.0.1", Capabilities: ["ProvideVirtualColumns", "UsesNetwork", "ReadsLocalFiles", "WritesLocalFiles"]);
     public IReadOnlyList<VirtualColumnDefinition> Columns { get; } = [
         new("bot-ip-name", "bot-ip-name", "Bots | Crawler name from downloaded IP ranges.", ["bot-ip-name"], "No extra parameters required."),
         new("bot-verification", "bot-verification", "Bots | Check a User-Agent against its crawler IP ranges.", ["bot-verification"], "Sources: User-Agent, IP (in that order). Uses downloaded crawler ranges."),

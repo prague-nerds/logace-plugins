@@ -1,6 +1,6 @@
 {
   "id": "geoip.columns",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "GeoIP",
   "description": "Enrich IP addresses with location, ASN and organization.",
   "kind": "virtualColumnProvider",
@@ -86,5 +86,6 @@
       ],
       "parameterHint": "No extra parameters required."
     }
-  ]
+  ],
+  "minAppVersion": "2026.11.1"
 }

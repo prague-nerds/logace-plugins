@@ -6,7 +6,7 @@ using LogAce.PluginApi;
 /// <summary>Standalone Spring Boot format; retains the historic profile ID for saved sessions.</summary>
 public sealed class SpringBootParserPlugin : ILogAceParserPlugin
 {
-    public PluginMetadata Metadata { get; } = new("spring-boot", "Spring Boot", "Spring Boot logs, including multiline messages.", PluginKind.Parser, Capabilities: ["ParseCustomText"]);
+    public PluginMetadata Metadata { get; } = new("spring-boot", "Spring Boot", "Spring Boot logs, including multiline messages.", PluginKind.Parser, Version: "1.0.1", Capabilities: ["ParseCustomText"]);
     public ParserDetectionHints DetectionHints => ParserDetectionHints.None;
     public int Probe(ParserDetectionContext context, CancellationToken cancellationToken = default)
     {
